@@ -1,0 +1,43 @@
+@use "../partials/fonts" as *;
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* remove default margins for more control of spacing */
+h1,
+h2,
+h3,
+a,
+p {
+  margin: 0;
+}
+
+ul,
+label,
+textarea {
+  margin: 0;
+}
+textarea,
+input {
+  font-family: inherit;
+}
+
+select {
+  font-family: "Titillium";
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+  margin: 0;
+}

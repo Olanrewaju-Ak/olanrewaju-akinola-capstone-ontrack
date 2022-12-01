@@ -1,0 +1,15 @@
+@use "./styles/partials/colors" as *;
+@use "./styles/partials/breakpoints" as breakpoint;
+@use "./styles/partials/mixins" as *;
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+}
