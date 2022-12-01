@@ -1,0 +1,10 @@
+.addform {
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+
+	&__radio-buttons {
+		display: flex;
+	}
+}
