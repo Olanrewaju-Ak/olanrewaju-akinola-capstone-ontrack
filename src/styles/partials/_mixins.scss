@@ -5,19 +5,19 @@
 @mixin desktopPageHeader {
 	font-size: 2rem;
 	line-height: 2.5rem;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 @mixin desktopSubheader {
 	font-size: 1.5rem;
 	line-height: 2rem;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 @mixin desktopLabelsLinksButtons {
 	font-size: 0.875rem;
 	line-height: 1.375rem;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 @mixin desktopTableHeader {
@@ -49,25 +49,25 @@
 @mixin mobilePageHeader {
 	font-size: 1.75rem;
 	line-height: 2.25rem;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 @mixin mobileSubheader {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 @mixin mobileLabelsLinksButtons {
 	font-size: 0.8125rem;
 	line-height: 1.25rem;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 @mixin mobileTableHeader {
 	font-size: 0.6875rem;
 	line-height: 1rem;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 @mixin mobileBodyLarge {
