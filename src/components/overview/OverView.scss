@@ -1,0 +1,21 @@
+.overview {
+	max-width: 1000px;
+	display: flex;
+	justify-content: center;
+	gap: 0.625rem;
+
+	&-income {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-expenses {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-balance {
+		display: flex;
+		flex-direction: column;
+	}
+}
