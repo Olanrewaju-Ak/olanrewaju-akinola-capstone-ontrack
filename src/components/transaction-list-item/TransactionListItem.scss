@@ -1,0 +1,31 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+.transaction-list__item {
+	@include boxShadow;
+	list-style: none;
+	background-color: #fff;
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+	// position: relative;
+	padding: 0.625rem;
+	margin: 0.625rem 0;
+	border-radius: 0.5rem;
+}
+
+.expense {
+	border-right: 8px solid $highlight-Red;
+}
+
+.income {
+	border-right: 8px solid $highlight-Green;
+}
+
+.icon {
+	background-color: #fff;
+	color: $highlight-Red;
+	padding: 0.5rem;
+}

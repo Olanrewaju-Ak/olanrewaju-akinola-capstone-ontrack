@@ -1,4 +1,5 @@
 import React from "react";
+import "./Transactions.scss";
 import TransactionListItem from "../transaction-list-item/TransactionListItem";
 
 const Transactions = (props) => {
@@ -7,8 +8,8 @@ const Transactions = (props) => {
 			<p className="transactions-title">Recent Transactions</p>
 
 			{props.transactions?.length
-				? props.transactions.map((payload) => (
-						<TransactionListItem payload={payload} key={payload.id} />
+				? props.transactions.map((transaction) => (
+						<TransactionListItem transaction={transaction} key={transaction.id} />
 				  ))
 				: ""}
 		</div>

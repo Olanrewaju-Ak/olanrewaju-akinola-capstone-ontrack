@@ -19,7 +19,7 @@ const AddForm = (props) => {
 			<form action="" className="addform">
 				<input
 					type="number"
-					placeholder="Amount"
+					placeholder="Enter transaction Amount.."
 					value={amount}
 					onChange={(e) => setAmount(e.target.value)}
 				/>
@@ -29,19 +29,23 @@ const AddForm = (props) => {
 					value={desc}
 					onChange={(e) => setDesc(e.target.value)}
 				/>
-				<select
+				<input
 					name="category"
 					className="inventory-form__select"
+					list="category"
+					placeholder="Select or Enter a category.."
 					// value={values.category}
 					// onChange={handleCategoryChange}
-				>
+				/>
+				<datalist id="category">
 					<option value="">Please select a Category</option>
 					<option value="Food">Food</option>
 					<option value="Car">Car</option>
 					<option value="Tax">Tax</option>
 					<option value="Bills">Bills</option>
 					<option value="Health">Health</option>
-				</select>
+				</datalist>
+
 				<div className="addform__radio-buttons">
 					<input
 						type="radio"

@@ -38,8 +38,8 @@ function App() {
 	return (
 		<div className="App">
 			<Header />
-			<OverView />
-			<IncomeExpenseCard />
+			<OverView transactions={transactions} />
+			<IncomeExpenseCard transactions={transactions} />
 			<AddTransactions addTransactions={addTransactions} />
 			<Transactions transactions={transactions} />
 		</div>

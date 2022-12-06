@@ -87,3 +87,19 @@
 	line-height: 1rem;
 	font-weight: 400;
 }
+
+// box shadow
+
+@mixin boxShadow {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+//Buttons
+
+@mixin buttonPrimary {
+	background: #7f3dff;
+	border-radius: 1rem;
+	padding: 1rem;
+	color: #ffff;
+	border: none;
+}

@@ -3,6 +3,7 @@
 html,
 body {
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	font-family: "inter";
 }
@@ -20,12 +21,14 @@ h3,
 a,
 p {
 	margin: 0;
+	padding: 0;
 }
 
 ul,
 label,
 textarea {
 	margin: 0;
+	padding: 0;
 }
 textarea,
 input {

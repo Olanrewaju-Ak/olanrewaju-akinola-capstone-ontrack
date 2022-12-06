@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import AddForm from "../add-form/AddForm";
+import "./AddTransactions.scss";
 
 const Addtransaction = (props) => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
@@ -14,7 +15,7 @@ const Addtransaction = (props) => {
 	return (
 		<div>
 			Addtransaction
-			<button onClick={() => setAddFormVisible(!isAddformVisible)}>
+			<button onClick={() => setAddFormVisible(!isAddformVisible)} className="btn_primary">
 				{isAddformVisible ? "Cancel" : "ADD"}
 			</button>
 			{isAddformVisible && modal}
