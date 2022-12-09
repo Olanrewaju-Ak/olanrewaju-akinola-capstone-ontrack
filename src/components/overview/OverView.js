@@ -12,6 +12,7 @@ const OverView = ({ transactions }) => {
 		// console.log(modified);
 		return total + modified;
 	}, 0);
+
 	// console.log(balance);
 	return (
 		<div className="overview__section">
@@ -22,7 +23,7 @@ const OverView = ({ transactions }) => {
 						balance < 0 ? "overview__balance--text-bad" : "overview__balance--text-good"
 					}
 				>
-					${balance}
+					${balance.toFixed(2)}
 				</p>
 			</div>
 		</div>

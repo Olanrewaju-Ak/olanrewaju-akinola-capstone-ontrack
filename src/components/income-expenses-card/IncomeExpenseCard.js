@@ -6,46 +6,56 @@ import axios from "axios";
 import "./IncomeExpenseCard.scss";
 
 //Money formatter function
-function moneyFormatter(num) {
-	let p = num.toFixed(2).split(".");
-	return (
-		"$" +
-		p[0]
-			.split("")
-			.reverse()
-			.reduce(function (acc, num, i, orig) {
-				return num === "-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
-			}, "") +
-		"." +
-		p[1]
-	);
-}
+// function moneyFormatter(num) {
+// 	let p = num.toFixed(2).split(".");
+// 	return (
+// 		"$" +
+// 		p[0]
+// 			.split("")
+// 			.reverse()
+// 			.reduce(function (acc, num, i, orig) {
+// 				return num === "-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
+// 			}, "") +
+// 		"." +
+// 		p[1]
+// 	);
+// }
 
-const IncomeExpenseCard = ({ transactions }) => {
+const IncomeExpenseCard = ({ transaction }) => {
 	const [expenses, updateExpenses] = useState([]);
+	const [income, updateIncome] = useState([]);
 
 	const getExpenses = async () => {
 		const response = await axios.get("http://localhost:8080/api/transactions/expenses");
-		console.log(response.data);
+		// console.log(response.data);
 		updateExpenses(response.data);
 		return;
 	};
 
+	const getIncome = async () => {
+		const response = await axios.get("http://localhost:8080/api/transactions/income");
+		console.log(response.data);
+		updateIncome(response.data);
+		return;
+	};
+
+	// getIncome();
 	useEffect(() => {
 		try {
 			getExpenses();
+			getIncome();
 		} catch (error) {}
 	}, []);
 
-	const income = transactions.reduce((total, item) => {
-		const amount = item.amount;
-		// console.log(amount);
-		const isExpense = item.type === "expense";
-		const modifier = isExpense ? 0 : 1;
-		const modified = amount * modifier;
-		// console.log(modified);
-		return total + amount * modifier;
-	}, 0);
+	// const totalIncome = transactions.reduce((total, item) => {
+	// 	const amount = item.amount;
+	// 	// console.log(amount);
+	// 	const isExpense = item.type === "expense";
+	// 	const modifier = isExpense ? 0 : 1;
+	// 	const modified = amount * modifier;
+	// 	// console.log(modified);
+	// 	return total + amount * modifier;
+	// }, 0);
 
 	// console.log(income);
 
@@ -68,7 +78,12 @@ const IncomeExpenseCard = ({ transactions }) => {
 		return total + amount;
 	}, 0);
 
-	console.log(totalExpenses);
+	const totalIncome = income.reduce((total, item) => {
+		const amount = item.amount;
+		return total + amount;
+	}, 0);
+
+	// console.log(totalIncome);
 
 	return (
 		<section className="income-expense">
@@ -78,7 +93,7 @@ const IncomeExpenseCard = ({ transactions }) => {
 				</div>
 				<div className="card__detail">
 					<p className="card__detail-title">income</p>
-					<p className="card__detail-amount">{moneyFormatter(income)}</p>
+					<p className="card__detail-amount">{totalIncome.toFixed(2)}</p>
 				</div>
 			</div>
 			<div className="card card-expense">
@@ -87,7 +102,7 @@ const IncomeExpenseCard = ({ transactions }) => {
 				</div>
 				<div className="card__detail">
 					<p className="card__detail-title">expense</p>
-					<p className="card__detail-amount">{moneyFormatter(totalExpenses)}</p>
+					<p className="card__detail-amount">{totalExpenses.toFixed(2)}</p>
 				</div>
 			</div>
 		</section>

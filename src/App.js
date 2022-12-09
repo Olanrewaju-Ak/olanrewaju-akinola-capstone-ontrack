@@ -40,23 +40,6 @@ function App() {
 		} catch (error) {}
 	}, []);
 
-	// useEffect(() => {
-	// 	getSelectedVideo(videoId);
-	// }, [videoId]);
-
-	// const params = useParams();
-
-	// useEffect(() => {
-	// 	if (Object.keys(params).length !== 0) {
-	// 		try {
-	// 			getAllVideos(params.videoId);
-	// 			setVideoId(params.videoId);
-	// 		} catch (error) {}
-	// 	} else {
-	// 		setVideoId(defaultV);
-	// 	}
-	// }, [params]);
-
 	const deleteTransaction = async () => {
 		await axios.delete(`${URL}${PORT}/api/transactions/${selectedTransaction.id}`);
 		// setOpenModal(false);
@@ -68,7 +51,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<OverView transactions={transactions} />
-			<IncomeExpenseCard transactions={transactions} />
+			<IncomeExpenseCard />
 			<TransactionsPage
 				transactions={transactions}
 				selectedTransaction={selectedTransaction}

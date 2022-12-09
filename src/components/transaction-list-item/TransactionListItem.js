@@ -42,7 +42,8 @@ const TransactionListItem = ({
 					</div>
 					<div className="transaction-card__details">
 						<p className="transaction-card__details--amount">
-							{transaction.type === "income" ? "+" : "-"}${transaction.amount}
+							{transaction.type === "income" ? "+" : "-"}$
+							{transaction.amount.toFixed(2)}
 						</p>
 						<p className="transaction-card__details--date">
 							{new Date(transaction.date).toLocaleDateString("en-US", {
