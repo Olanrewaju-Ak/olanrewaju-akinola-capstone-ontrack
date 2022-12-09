@@ -4,16 +4,12 @@
 @use "../../styles/partials/resets" as *;
 
 .transaction-list__item {
-	@include boxShadow;
 	list-style: none;
 	background-color: #fff;
 	color: #333;
-	display: flex;
-	justify-content: space-between;
+	// display: flex;
+	// justify-content: space-between;
 	// position: relative;
-	padding: 0.625rem;
-	margin: 0.625rem 0;
-	border-radius: 0.5rem;
 }
 
 .expense {
@@ -24,8 +20,47 @@
 	border-right: 8px solid $highlight-Green;
 }
 
-.icon {
-	background-color: #fff;
-	color: $highlight-Red;
-	padding: 0.5rem;
+.transaction-card {
+	@include boxShadow;
+	padding: 0.625rem;
+	margin: 1rem 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 0.5rem;
+
+	&__icon {
+		background-color: none;
+		color: $highlight-Red;
+		// padding: 0.5rem;
+		// width: 1.5rem;
+		height: 1.2rem;
+	}
+
+	&__delete-btn {
+		background: none;
+		border: none;
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	&__description-text {
+		@include mobileBodyLarge;
+		font-weight: 700;
+		margin: 0.5rem 0;
+		color: $primary-Black;
+	}
+	&__details {
+		&--amount {
+			@include mobileBodyLarge;
+			font-weight: 500;
+			margin: 0.5rem 0;
+			color: $primary-Black;
+		}
+		&--date {
+			@include mobileBodyMedium;
+			// font-weight: 500;
+			margin: 0.5rem 0;
+			color: $primary-silver;
+		}
+	}
 }

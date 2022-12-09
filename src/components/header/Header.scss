@@ -1,6 +1,13 @@
-@use "./styles/partials/colors" as *;
-@use "./styles/partials/breakpoints" as breakpoint;
-@use "./styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+	background-color: $primary-violet;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
 
 /*  MOBILE   */
 @include breakpoint.small {

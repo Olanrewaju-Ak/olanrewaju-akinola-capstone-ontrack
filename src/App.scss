@@ -1,5 +1,9 @@
+@use "./styles/partials/breakpoints" as breakpoint;
+@use "./styles/partials/colors" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/fonts" as *;
 @use "./styles/partials/resets" as *;
 
-.App {
-	padding: 2rem 1rem;
-}
+// .App {
+// 	padding: 2rem 1rem;
+// }

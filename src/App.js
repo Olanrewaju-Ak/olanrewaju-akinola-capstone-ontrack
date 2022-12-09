@@ -1,8 +1,9 @@
 import "./App.scss";
 import OverView from "./components/overview/OverView";
 import Transactions from "./components/transactions/Transactions";
+import TransactionsPage from "./pages/TransactionsPage";
 import IncomeExpenseCard from "./components/income-expenses-card/IncomeExpenseCard";
-import AddTransactions from "./components/add-transactions/AddTransactions";
+import AddTransactions from "./components/add-transaction/AddTransactions";
 import Header from "./components/header/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -11,37 +12,69 @@ import React from "react";
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
 
-console.log(URL);
-console.log(PORT);
-
 function App() {
 	const [transactions, updateTransactions] = useState([]);
+	const [selectedTransaction, setSelectedTransaction] = useState({
+		description: " ",
+		id: " "
+	});
 
-	const addTransactions = (payload) => {
-		const transactionsArray = [...transactions];
-		transactionsArray.push(payload);
-		updateTransactions(transactionsArray);
-	};
+	// const addTransactions = (values) => {
+	// 	const transactionsArray = [...transactions];
+	// 	transactionsArray.push(values);
+	// 	updateTransactions(transactionsArray);
+	// };
 
 	const getTransactions = async () => {
 		const response = await axios.get("http://localhost:8080/api/transactions");
-		console.log(response.data);
-		updateTransactions(response.data);
 
+		const sortedTransactions = response.data.sort((a, b) => b.timestamp - a.timestamp);
+		console.log(sortedTransactions);
+		updateTransactions(sortedTransactions);
 		return;
 	};
 
 	useEffect(() => {
-		getTransactions();
+		try {
+			getTransactions();
+		} catch (error) {}
 	}, []);
+
+	// useEffect(() => {
+	// 	getSelectedVideo(videoId);
+	// }, [videoId]);
+
+	// const params = useParams();
+
+	// useEffect(() => {
+	// 	if (Object.keys(params).length !== 0) {
+	// 		try {
+	// 			getAllVideos(params.videoId);
+	// 			setVideoId(params.videoId);
+	// 		} catch (error) {}
+	// 	} else {
+	// 		setVideoId(defaultV);
+	// 	}
+	// }, [params]);
+
+	const deleteTransaction = async () => {
+		await axios.delete(`${URL}${PORT}/api/transactions/${selectedTransaction.id}`);
+		// setOpenModal(false);
+
+		getTransactions();
+	};
 
 	return (
 		<div className="App">
 			<Header />
 			<OverView transactions={transactions} />
 			<IncomeExpenseCard transactions={transactions} />
-			<AddTransactions addTransactions={addTransactions} />
-			<Transactions transactions={transactions} />
+			<TransactionsPage
+				transactions={transactions}
+				selectedTransaction={selectedTransaction}
+				deleteTransaction={deleteTransaction}
+				setSelectedTransaction={setSelectedTransaction}
+			/>
 		</div>
 	);
 }

@@ -1,21 +1,39 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
 .overview {
-	max-width: 1000px;
-	display: flex;
-	justify-content: center;
-	gap: 0.625rem;
-
-	&-income {
+	&__section {
+		// max-width: 1000px;
 		display: flex;
-		flex-direction: column;
+		justify-content: center;
+		padding: 1rem 2rem;
 	}
 
-	&-expenses {
+	&__balance {
 		display: flex;
 		flex-direction: column;
-	}
 
-	&-balance {
-		display: flex;
-		flex-direction: column;
+		&--title {
+			@include mobileBodyLarge;
+			color: $primary-silver;
+		}
+
+		&--text-good {
+			@include mobilePageHeader;
+			color: $highlight-Green;
+		}
+		&--text-bad {
+			@include mobilePageHeader;
+			color: $highlight-Red;
+		}
 	}
+}
+
+.good {
+	color: $highlight-Green;
+}
+.bad {
+	color: $highlight-Red;
 }

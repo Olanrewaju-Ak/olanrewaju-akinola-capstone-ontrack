@@ -98,8 +98,15 @@
 
 @mixin buttonPrimary {
 	background: #7f3dff;
-	border-radius: 1rem;
-	padding: 1rem;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
 	color: #ffff;
+	border: none;
+}
+@mixin buttonSecondary {
+	background: #eee5ff;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	color: #7f3dff;
 	border: none;
 }

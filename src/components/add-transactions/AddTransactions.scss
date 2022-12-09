@@ -1,7 +1,0 @@
-@use "../../styles/partials/breakpoints" as breakpoint;
-@use "../../styles/partials/colors" as *;
-@use "../../styles/partials/mixins" as *;
-
-.btn_primary {
-	@include buttonPrimary;
-}

@@ -6,18 +6,50 @@
 	display: flex;
 	justify-content: center;
 	gap: 5%;
+	padding: 1rem;
 }
 
 .card {
 	display: flex;
 	border: 1px solid #afafaf;
-	border-radius: 0.625rem;
+	border-radius: 0.8rem;
 	width: 10.25rem;
 	height: 5rem;
-	padding: 1rem;
-}
+	padding: 0.8rem;
+	gap: 4%;
 
-.card__icon-img {
-	width: 3rem;
-	height: 3rem;
+	&-income {
+		background-color: $highlight-Green;
+	}
+
+	&-expense {
+		background-color: $highlight-Red;
+	}
+
+	&__icon {
+		// padding: 0.1rem;
+		background-color: $background-Light-Grey;
+		border-radius: 0.5rem;
+
+		&-img {
+			width: 3rem;
+			height: 3rem;
+		}
+	}
+
+	&__detail {
+		display: flex;
+		flex-direction: column;
+
+		&-title {
+			@include mobileBodyMedium;
+			color: $primary-White;
+			font-weight: 500;
+		}
+		&-amount {
+			@include mobileBodyLarge;
+			color: $primary-White;
+			font-weight: 700;
+		}
+	}
 }
