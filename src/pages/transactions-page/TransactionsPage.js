@@ -1,6 +1,6 @@
 import React from "react";
-import Addtransaction from "../components/add-transaction/AddTransactions";
-import Transactions from "../components/transactions/Transactions";
+import Addtransaction from "../../components/add-transaction/AddTransactions";
+import Transactions from "../../components/transactions/Transactions";
 
 const TransactionsPage = ({
 	transactions,
@@ -10,7 +10,6 @@ const TransactionsPage = ({
 }) => {
 	return (
 		<div>
-			TransactionsPage
 			<Addtransaction
 				transactions={transactions}
 				selectedTransaction={selectedTransaction}

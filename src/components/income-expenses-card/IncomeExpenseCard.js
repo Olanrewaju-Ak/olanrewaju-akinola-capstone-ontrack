@@ -4,6 +4,7 @@ import expenseIcon from "../../assets/icons/expense.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./IncomeExpenseCard.scss";
+import IncomeExpensesChart from "../income-expenses-chart/IncomeExpensesChart";
 
 //Money formatter function
 // function moneyFormatter(num) {
@@ -87,23 +88,28 @@ const IncomeExpenseCard = ({ transaction }) => {
 
 	return (
 		<section className="income-expense">
-			<div className="card card-income">
-				<div className="card__icon">
-					<img src={incomeIcon} alt="incomeCard" className="card__icon-img" />
+			<div className="cards">
+				<div className="card card-income">
+					<div className="card__icon">
+						<img src={incomeIcon} alt="incomeCard" className="card__icon-img" />
+					</div>
+					<div className="card__detail">
+						<p className="card__detail-title">income</p>
+						<p className="card__detail-amount">{totalIncome.toFixed(2)}</p>
+					</div>
 				</div>
-				<div className="card__detail">
-					<p className="card__detail-title">income</p>
-					<p className="card__detail-amount">{totalIncome.toFixed(2)}</p>
+				<div className="card card-expense">
+					<div className="card__icon">
+						<img src={expenseIcon} alt="incomeCard" className="card__icon-img" />
+					</div>
+					<div className="card__detail">
+						<p className="card__detail-title">expense</p>
+						<p className="card__detail-amount">{totalExpenses.toFixed(2)}</p>
+					</div>
 				</div>
 			</div>
-			<div className="card card-expense">
-				<div className="card__icon">
-					<img src={expenseIcon} alt="incomeCard" className="card__icon-img" />
-				</div>
-				<div className="card__detail">
-					<p className="card__detail-title">expense</p>
-					<p className="card__detail-amount">{totalExpenses.toFixed(2)}</p>
-				</div>
+			<div className="chart-view">
+				<IncomeExpensesChart totalIncome={totalIncome} totalExpenses={totalExpenses} />
 			</div>
 		</section>
 	);

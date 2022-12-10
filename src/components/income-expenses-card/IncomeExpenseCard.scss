@@ -3,10 +3,16 @@
 @use "../../styles/partials/mixins" as *;
 
 .income-expense {
+	// display: flex;
+	// justify-content: center;
+	// gap: 5%;
+	padding: 1rem;
+}
+
+.cards {
 	display: flex;
 	justify-content: center;
 	gap: 5%;
-	padding: 1rem;
 }
 
 .card {
@@ -52,4 +58,8 @@
 			font-weight: 700;
 		}
 	}
+}
+
+.chart-view {
+	margin-top: 2rem;
 }

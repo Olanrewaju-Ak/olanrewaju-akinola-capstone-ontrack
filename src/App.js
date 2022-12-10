@@ -1,9 +1,9 @@
 import "./App.scss";
 import OverView from "./components/overview/OverView";
-import Transactions from "./components/transactions/Transactions";
-import TransactionsPage from "./pages/TransactionsPage";
+// import Transactions from "./components/transactions/Transactions";
+import TransactionsPage from "./pages/transactions-page/TransactionsPage";
 import IncomeExpenseCard from "./components/income-expenses-card/IncomeExpenseCard";
-import AddTransactions from "./components/add-transaction/AddTransactions";
+// import AddTransactions from "./components/add-transaction/AddTransactions";
 import Header from "./components/header/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
