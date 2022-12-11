@@ -1,6 +1,6 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js/auto";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -15,12 +15,16 @@ const DoughnutChart = ({ transaction, totalIncome, totalExpenses }) => {
 				borderColor: ["rgb(35, 35, 36)", "rgb(35, 35, 36)"],
 				hoverBackgroundColor: ["rgb(194, 8, 8)", "rgb(7, 105, 171)"],
 				spacing: 5,
-				hoverOffset: 10
+				hoverOffset: 4
 			}
 		]
 	};
 
-	return <Doughnut data={data} height={400} />;
+	return (
+		<div className="chart-block">
+			<Doughnut data={data} height={400}></Doughnut>
+		</div>
+	);
 };
 
 export default DoughnutChart;

@@ -4,6 +4,7 @@ import OverView from "./components/overview/OverView";
 import TransactionsPage from "./pages/transactions-page/TransactionsPage";
 import IncomeExpenseCard from "./components/income-expenses-card/IncomeExpenseCard";
 // import AddTransactions from "./components/add-transaction/AddTransactions";
+import Budgets from "./components/budgets/Budgets";
 import Header from "./components/header/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -19,18 +20,11 @@ function App() {
 		id: " "
 	});
 
-	// const addTransactions = (values) => {
-	// 	const transactionsArray = [...transactions];
-	// 	transactionsArray.push(values);
-	// 	updateTransactions(transactionsArray);
-	// };
-
 	const getTransactions = async () => {
 		const response = await axios.get("http://localhost:8080/api/transactions");
+		console.log(response.data);
 
-		const sortedTransactions = response.data.sort((a, b) => b.timestamp - a.timestamp);
-		console.log(sortedTransactions);
-		updateTransactions(sortedTransactions);
+		updateTransactions(response.data);
 		return;
 	};
 
@@ -57,7 +51,9 @@ function App() {
 				selectedTransaction={selectedTransaction}
 				deleteTransaction={deleteTransaction}
 				setSelectedTransaction={setSelectedTransaction}
+				getTransactions={getTransactions}
 			/>
+			{/* <Budgets /> */}
 		</div>
 	);
 }

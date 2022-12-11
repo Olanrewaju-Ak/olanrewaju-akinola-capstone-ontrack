@@ -8,6 +8,12 @@ const TransactionListItem = ({
 	deleteTransaction,
 	setSelectedTransaction
 }) => {
+	const toTitleCase = (str) => {
+		return str.replace(/\w\S*/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
+	};
+
 	return (
 		<>
 			<section key={transaction.id} className={"transaction-list__item"}>
@@ -20,7 +26,7 @@ const TransactionListItem = ({
 				>
 					<div className="transaction-card__description">
 						<p className="transaction-card__description-text">
-							{transaction.description}
+							{toTitleCase(transaction.description)}
 						</p>
 						<button
 							onClick={() => {

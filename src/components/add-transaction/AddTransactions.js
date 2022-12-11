@@ -14,12 +14,13 @@ const Addtransaction = () => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
 
 	const addNewTransaction = (values) => {
-		const { amount, description, type, date } = values;
+		const { amount, description, type, date, category } = values;
 		axios
 			.post(`${URL}${PORT}/api/transactions/`, {
 				amount: amount,
 				description: description,
 				type: type,
+				category: category,
 				date: date
 			})
 			.then((response) => console.log(response.data))
@@ -29,8 +30,16 @@ const Addtransaction = () => {
 		amount: "",
 		description: " ",
 		type: " ",
+		category: " ",
 		date: ""
 	};
+
+	useEffect(() => {
+		try {
+			addNewTransaction();
+			// getTransactions();
+		} catch (error) {}
+	}, []);
 
 	const modal = (
 		// <Modal isOpen={isAddformVisible} ariaHideApp={false}>
@@ -46,13 +55,13 @@ const Addtransaction = () => {
 	return (
 		<section className="container">
 			<div className="add-transaction">
-				<p className="add-transaction__title">Addtransaction</p>
+				{/* <p className="add-transaction__title">Addtransaction</p> */}
 
 				<button
 					onClick={() => setAddFormVisible(!isAddformVisible)}
 					className="btn_secondary"
 				>
-					{isAddformVisible ? "Cancel" : "ADD"}
+					{isAddformVisible ? "Cancel" : "ADD TRANSACTION"}
 				</button>
 			</div>
 			{isAddformVisible && modal}

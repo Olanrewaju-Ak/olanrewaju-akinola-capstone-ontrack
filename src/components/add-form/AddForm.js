@@ -2,9 +2,13 @@ import "./AddForm.scss";
 import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import errorIcon from "../../assets/icons/error-24px.svg";
 
 const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues }) => {
 	const [values, setValues] = useState(initialValues);
+
+	// form validation states
+	const [isError, setIsError] = useState(false);
 
 	const { amount, description, type, date, category } = values;
 
@@ -17,17 +21,33 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 		});
 	};
 
+	const formValidation = (values) => {
+		// check if form field is empty
+
+		if (!amount || !description || !type || !date || !category) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
 	const submitHandler = (event) => {
 		event.preventDefault();
 
-		// console.log(values);
-		requestHandler(values);
-		setAddFormVisible(false);
+		if (!formValidation(values)) {
+			setIsError(true);
+		} else {
+			setIsError(false);
+			requestHandler(values);
+			setAddFormVisible(false);
+		}
+
 		event.target.reset();
 	};
 
 	return (
 		<div className="addform-container">
+			<p className="addform__title">Add Transaction</p>
 			<form action="" className="form" onSubmit={submitHandler}>
 				<input
 					type="date"
@@ -36,6 +56,12 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 					onChange={handleInputChange}
 					className="form-control"
 				/>
+				{isError && !values[date] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">The date field is required</span>
+					</div>
+				)}
 				<input
 					type="number"
 					step="0.01"
@@ -45,6 +71,12 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 					className="form-control"
 					onChange={handleInputChange}
 				/>
+				{isError && !values[amount] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">The amount field is required</span>
+					</div>
+				)}
 				<input
 					type="text"
 					name="description"
@@ -53,23 +85,42 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 					className="form-control"
 					onChange={handleInputChange}
 				/>
-				<input
+				{isError && !values[description] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">
+							Please enter a valid description of your transaction
+						</span>
+					</div>
+				)}
+				<select
 					name="category"
-					// className="inventory-form__select"
+					id="category"
 					list="category"
 					placeholder="Select or Enter a category..."
 					value={values[category]}
 					className="form-control"
 					onChange={handleInputChange}
-				/>
-				<datalist id="category" className="form-control">
-					<option value="">Please select a Category</option>
-					<option value="Food">Food</option>
-					<option value="Car">Car</option>
-					<option value="Tax">Tax</option>
-					<option value="Bills">Bills</option>
-					<option value="Health">Health</option>
-				</datalist>
+				>
+					<option value="">Please Select a Category</option>
+					<option value="food">Food</option>
+					<option value="personal">Personal</option>
+					<option value="utility">Utility</option>
+					<option value="transport">Transport</option>
+					<option value="lifestyle">Lifestyle</option>
+					<option value="medical">Medical</option>
+					<option value="housing">Housing</option>
+					<option value="income">Income</option>
+					<option value="others">Others</option>
+				</select>
+				{isError && !values[category] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">
+							Please select an appropriate category for your transaction
+						</span>
+					</div>
+				)}
 
 				<div className="form-control__radio-buttons">
 					<div className="form-control__radio-buttons--expense">
@@ -77,7 +128,7 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 							type="radio"
 							id="expense"
 							name="type"
-							value="expense"
+							value={type}
 							checked={type === "expense"}
 							className="form-control__radio-buttons--input"
 							onChange={handleInputChange}
@@ -89,7 +140,7 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 							type="radio"
 							id="income"
 							name="type"
-							value="income"
+							value={type}
 							checked={type === "income"}
 							className="form-control__radio-buttons--input"
 							onChange={handleInputChange}
@@ -97,6 +148,14 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 						<label htmlFor="income">Income</label>
 					</div>
 				</div>
+				{isError && !values[type] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">
+							Please select an appropriate transaction type
+						</span>
+					</div>
+				)}
 				<button type="submit" className="btn_primary">
 					{buttonText}
 				</button>

@@ -6,14 +6,15 @@ const TransactionsPage = ({
 	transactions,
 	selectedTransaction,
 	deleteTransaction,
-	setSelectedTransaction
+	setSelectedTransaction,
+	getTransactions
 }) => {
 	return (
 		<div>
 			<Addtransaction
 				transactions={transactions}
 				selectedTransaction={selectedTransaction}
-				deleteTransaction={deleteTransaction}
+				getTransactions={getTransactions}
 			/>
 			<Transactions
 				transactions={transactions}
