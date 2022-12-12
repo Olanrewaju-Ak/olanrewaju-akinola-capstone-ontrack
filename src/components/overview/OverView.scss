@@ -22,7 +22,7 @@
 
 		&--text-good {
 			@include mobilePageHeader;
-			color: $highlight-Green;
+			color: $primary-blue;
 		}
 		&--text-bad {
 			@include mobilePageHeader;

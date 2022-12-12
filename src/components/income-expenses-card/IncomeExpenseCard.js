@@ -1,6 +1,6 @@
 import React from "react";
-import incomeIcon from "../../assets/icons/income.png";
-import expenseIcon from "../../assets/icons/expense.png";
+import incomeIcon from "../../assets/icons/Income.svg";
+import expenseIcon from "../../assets/icons/expense.svg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./IncomeExpenseCard.scss";

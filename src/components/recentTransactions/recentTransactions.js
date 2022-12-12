@@ -13,15 +13,17 @@ const Transactions = ({
 			<p className="transactions-title">Recent Transactions</p>
 
 			{transactions?.length
-				? transactions.map((transaction) => (
-						<TransactionListItem
-							transaction={transaction}
-							key={transaction.id}
-							selectedTransaction={selectedTransaction}
-							deleteTransaction={deleteTransaction}
-							setSelectedTransaction={setSelectedTransaction}
-						/>
-				  ))
+				? transactions
+						.slice(0, 3)
+						.map((transaction) => (
+							<TransactionListItem
+								transaction={transaction}
+								key={transaction.id}
+								selectedTransaction={selectedTransaction}
+								deleteTransaction={deleteTransaction}
+								setSelectedTransaction={setSelectedTransaction}
+							/>
+						))
 				: ""}
 		</section>
 	);

@@ -1,6 +1,14 @@
 import "./TransactionListItem.scss";
 import React from "react";
-import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import medicalIcon from "../../assets/icons/first-aid-kit.png";
+import lifestyleIcon from "../../assets/icons/lifesyle.png";
+import othersIcon from "../../assets/icons/others.png";
+import housingIcon from "../../assets/icons/housing.png";
+import foodIcon from "../../assets/icons/food2.png";
+import transportIcon from "../../assets/icons/transport.png";
+import personalIcon from "../../assets/icons/personal.png";
+import subsIcon from "../../assets/icons/subs.png";
+import incomeIcon from "../../assets/icons/income.png";
 
 const TransactionListItem = ({
 	transaction,
@@ -40,7 +48,23 @@ const TransactionListItem = ({
 							className="transaction-card__delete-btn"
 						>
 							<img
-								src={deleteIcon}
+								src={
+									transaction.category === "medical"
+										? medicalIcon
+										: transaction.category === "food"
+										? foodIcon
+										: transaction.category === "income"
+										? incomeIcon
+										: transaction.category === "utility"
+										? subsIcon
+										: transaction.category === "transport"
+										? transportIcon
+										: transaction.category === "lifestyle"
+										? lifestyleIcon
+										: transaction.category === "housing"
+										? housingIcon
+										: othersIcon
+								}
 								alt="delete-icon"
 								className="transaction-card__icon"
 							/>

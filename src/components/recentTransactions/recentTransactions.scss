@@ -1,0 +1,14 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.transactions {
+	&-list {
+		padding: 1rem;
+	}
+
+	&-title {
+		@include mobileSubheader;
+		color: $primary-Black;
+	}
+}

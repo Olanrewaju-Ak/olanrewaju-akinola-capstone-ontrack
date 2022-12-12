@@ -16,8 +16,9 @@
 }
 
 .card {
+	@include boxShadow;
 	display: flex;
-	border: 1px solid #afafaf;
+	border: none;
 	border-radius: 0.8rem;
 	width: 10.25rem;
 	height: 5rem;

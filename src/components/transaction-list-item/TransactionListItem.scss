@@ -7,6 +7,9 @@
 	list-style: none;
 	background-color: #fff;
 	color: #333;
+	&:hover {
+		background-color: d6e8ee;
+	}
 	// display: flex;
 	// justify-content: space-between;
 	// position: relative;
