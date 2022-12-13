@@ -1,48 +1,26 @@
 import "./App.scss";
-import OverView from "./components/overview/OverView";
-import Transactions from "./components/transactions/Transactions";
-import IncomeExpenseCard from "./components/income-expenses-card/IncomeExpenseCard";
-import AddTransactions from "./components/add-transactions/AddTransactions";
-import Header from "./components/header/Header";
-import { useState, useEffect } from "react";
-import axios from "axios";
+
 import React from "react";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
-const URL = process.env.REACT_APP_BACKEND_URL;
-const PORT = process.env.REACT_APP_PORT;
-
-console.log(URL);
-console.log(PORT);
+import Header from "./components/header/Header";
+import HomePage from "./pages/home-page/HomePage";
+import AccountPage from "./pages/account-page/AccountPage";
+import Footer from "./components/footer/Footer";
 
 function App() {
-	const [transactions, updateTransactions] = useState([]);
-
-	const addTransactions = (payload) => {
-		const transactionsArray = [...transactions];
-		transactionsArray.push(payload);
-		updateTransactions(transactionsArray);
-	};
-
-	const getTransactions = async () => {
-		const response = await axios.get("http://localhost:8080/api/transactions");
-		console.log(response.data);
-		updateTransactions(response.data);
-
-		return;
-	};
-
-	useEffect(() => {
-		getTransactions();
-	}, []);
-
 	return (
-		<div className="App">
-			<Header />
-			<OverView transactions={transactions} />
-			<IncomeExpenseCard transactions={transactions} />
-			<AddTransactions addTransactions={addTransactions} />
-			<Transactions transactions={transactions} />
-		</div>
+		<BrowserRouter>
+			<div className="App">
+				<Header />
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+
+					<Route path="/account" element={<AccountPage />} />
+				</Routes>
+				<Footer />
+			</div>
+		</BrowserRouter>
 	);
 }
 

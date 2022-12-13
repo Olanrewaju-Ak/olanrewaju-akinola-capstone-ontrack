@@ -9,6 +9,14 @@ const GlobalContext = React.createContext();
 
 //Provider Component
 export const GlobalProvider = ({ children }) => {
-	const [income, setIncome] = useState();
-	const [expenses, setExpenses] = useState();
+	const [transactions, setTransactions] = useState([]);
+	const [income, setIncome] = useState([]);
+	const [expenses, setExpenses] = useState([]);
+
+	const getTransactions = async (videoId) => {
+		const { data } = await axios.get(`${BACK_END}`);
+		const dataFilter = data.filter((video) => video.id !== videoId);
+
+		setVideos(dataFilter);
+	};
 };

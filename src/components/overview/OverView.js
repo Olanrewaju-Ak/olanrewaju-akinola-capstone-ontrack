@@ -2,19 +2,29 @@ import "./OverView.scss";
 import React from "react";
 
 const OverView = ({ transactions }) => {
-	// const amounts = transactions.map((transaction) => transaction.amount);
-	const total = transactions.reduce((total, item) => {
+	// console.log(transactions);
+	const balance = transactions.reduce((total, item) => {
 		const amount = item.amount;
+
 		const isExpense = item.type === "expense";
 		const modifier = isExpense ? -1 : 1;
-		return total + amount * modifier;
+		const modified = amount * modifier;
+		// console.log(modified);
+		return total + modified;
 	}, 0);
 
+	// console.log(balance);
 	return (
-		<div className="overview">
-			<div className="overview-balance">
-				Account Balance
-				<span>${total}</span>
+		<div className="overview__section">
+			<div className="overview__balance">
+				<p className="overview__balance--title">Account Balance</p>
+				<p
+					className={
+						balance < 0 ? "overview__balance--text-bad" : "overview__balance--text-good"
+					}
+				>
+					${balance.toFixed(2)}
+				</p>
 			</div>
 		</div>
 	);

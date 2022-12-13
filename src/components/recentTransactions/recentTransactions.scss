@@ -2,6 +2,13 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.btn_primary {
-	@include buttonPrimary;
+.transactions {
+	&-list {
+		padding: 1rem;
+	}
+
+	&-title {
+		@include mobileSubheader;
+		color: $primary-Black;
+	}
 }

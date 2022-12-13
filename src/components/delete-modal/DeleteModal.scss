@@ -1,0 +1,259 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+
+/* MOBILE */
+@include breakpoint.small {
+	.delete-modal {
+		position: relative;
+		&__container {
+			background-color: $primary-White;
+			height: 100vh;
+			width: 100%;
+			padding: 3.75rem 1rem;
+		}
+
+		&__title {
+			margin-bottom: 1rem;
+
+			&-text {
+				@include mobilePageHeader;
+				color: $primary-Instock-Black;
+			}
+		}
+
+		&__body {
+			margin-bottom: 23.8125rem;
+
+			&-text {
+				color: $primary-Instock-Black;
+				@include mobileBodyLarge;
+			}
+		}
+
+		&__button {
+			@include mobileLabelsLinksButtons;
+			display: flex;
+			justify-content: center;
+			gap: 4%;
+			width: 100%;
+
+			&--delete {
+				height: 2.375rem;
+				width: 45%;
+				border: none;
+				border-radius: 20px;
+				color: $primary-White;
+				background-color: $supporting-Red;
+
+				&:hover {
+					background-color: $background-Graphite;
+				}
+			}
+			&--cancel {
+				@include mobileLabelsLinksButtons;
+				height: 2.375rem;
+				width: 45%;
+				border: 1px solid $secondary-cloud;
+				border-radius: 20px;
+				color: $secondary-slate;
+				background-color: $primary-White;
+
+				&:hover {
+					color: $primary-Instock-Indigo;
+					border: 1px solid $primary-Instock-Indigo;
+				}
+			}
+
+			&-top {
+				position: absolute;
+				top: 1.315rem;
+				right: 2.1875rem;
+			}
+
+			&--close {
+				border: none;
+				background: none;
+				color: $primary-Instock-Black;
+				width: 0.875rem;
+				height: 0.875rem;
+			}
+		}
+	}
+}
+
+/*TABLET*/
+@include breakpoint.medium {
+	.delete-modal {
+		&__delete-modal-container {
+			background-color: rgba($primary-Instock-Black, 0.7);
+			height: 100vh;
+			padding: 11.5625rem 3rem 36.0625rem 3rem;
+		}
+
+		&__modal-content {
+			position: relative;
+			background-color: $primary-White;
+			width: 42rem;
+			height: 16.375rem;
+			padding: 2.5rem 4rem;
+			border-radius: 3px;
+		}
+	}
+
+	.modal {
+		&__title {
+			margin-bottom: 1rem;
+
+			&-text {
+				@include desktopPageHeader;
+				color: $primary-Instock-Black;
+			}
+		}
+
+		&__body {
+			margin-bottom: 2rem;
+
+			&-text {
+				color: $primary-Instock-Black;
+				@include desktopBodyLarge;
+			}
+		}
+
+		&__button {
+			@include desktopLabelsLinksButtons;
+			display: flex;
+			justify-content: flex-end;
+			gap: 4%;
+
+			&--delete {
+				height: 2.375rem;
+				width: 4.5rem;
+				border: none;
+				border-radius: 20px;
+				color: $primary-White;
+				background-color: $supporting-Red;
+
+				&:hover {
+					background-color: $background-Graphite;
+				}
+			}
+			&--cancel {
+				@include desktopLabelsLinksButtons;
+				height: 2.375rem;
+				width: 4.5rem;
+				border: 1px solid $secondary-cloud;
+				border-radius: 20px;
+				color: $secondary-slate;
+				background-color: $primary-White;
+
+				&:hover {
+					color: $primary-Instock-Indigo;
+					border: 1px solid $primary-Instock-Indigo;
+				}
+			}
+
+			&-top {
+				position: absolute;
+				top: 1.315rem;
+				right: 2.1875rem;
+			}
+
+			&--close {
+				border: none;
+				background: none;
+				color: $primary-Instock-Black;
+				width: 0.875rem;
+			}
+		}
+	}
+}
+
+/*DESKTOP*/
+@include breakpoint.medium {
+	.warehouse-list {
+		&__delete-modal-container {
+			background-color: rgba($primary-Instock-Black, 0.7);
+			height: 100vh;
+			padding-top: 11.5625rem;
+		}
+
+		&__modal-content {
+			position: relative;
+			background-color: $primary-White;
+			max-width: 672px;
+			height: 16.375rem;
+			padding: 2.5rem 4rem;
+			margin: 0 auto;
+			border-radius: 3px;
+		}
+	}
+
+	.modal {
+		&__title {
+			margin-bottom: 1rem;
+
+			&-text {
+				@include desktopPageHeader;
+				color: $primary-Instock-Black;
+			}
+		}
+
+		&__body {
+			margin-bottom: 2rem;
+
+			&-text {
+				color: $primary-Instock-Black;
+				@include desktopBodyLarge;
+			}
+		}
+
+		&__button {
+			@include desktopLabelsLinksButtons;
+			display: flex;
+			justify-content: flex-end;
+			gap: 4%;
+
+			&--delete {
+				height: 2.375rem;
+				width: 4.5rem;
+				border: none;
+				border-radius: 20px;
+				color: $primary-White;
+				background-color: $supporting-Red;
+
+				&:hover {
+					background-color: $background-Graphite;
+				}
+			}
+			&--cancel {
+				@include desktopLabelsLinksButtons;
+				height: 2.375rem;
+				width: 4.5rem;
+				border: 1px solid $secondary-cloud;
+				border-radius: 20px;
+				color: $secondary-slate;
+				background-color: $primary-White;
+
+				&:hover {
+					color: $primary-Instock-Indigo;
+					border: 1px solid $primary-Instock-Indigo;
+				}
+			}
+
+			&-top {
+				position: absolute;
+				top: 1.315rem;
+				right: 2.1875rem;
+			}
+
+			&--close {
+				border: none;
+				background: none;
+				color: $primary-Instock-Black;
+				width: 0.875rem;
+			}
+		}
+	}
+}

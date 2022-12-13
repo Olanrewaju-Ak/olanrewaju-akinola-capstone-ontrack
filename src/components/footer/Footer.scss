@@ -1,0 +1,17 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+	background-color: $primary-blue;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+
+	&-info {
+		&__text {
+			@include mobileLabelsLinksButtons;
+			color: $primary-White;
+		}
+	}
+}
