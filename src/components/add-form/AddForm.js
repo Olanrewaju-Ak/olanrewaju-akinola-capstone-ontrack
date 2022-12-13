@@ -93,6 +93,7 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 						</span>
 					</div>
 				)}
+
 				<select
 					name="category"
 					id="category"
@@ -122,7 +123,31 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 					</div>
 				)}
 
-				<div className="form-control__radio-buttons">
+				<select
+					name="type"
+					id="type"
+					list="type"
+					placeholder="Select a Transaction Type..."
+					value={values[type]}
+					className="form-control"
+					onChange={handleInputChange}
+				>
+					<option value="" className="form-control__option">
+						Please Select a Transaction Type
+					</option>
+					<option value="income">Income</option>
+					<option value="expense">Expense</option>
+				</select>
+				{isError && !values[type] && (
+					<div className="form__error-container">
+						<img className="form__error-icon" src={errorIcon} alt="error icon" />
+						<span className="form__error-message">
+							Please select the correct transaction type
+						</span>
+					</div>
+				)}
+
+				{/* <div className="form-control__radio-buttons">
 					<div className="form-control__radio-buttons--expense">
 						<input
 							type="radio"
@@ -155,7 +180,7 @@ const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues 
 							Please select an appropriate transaction type
 						</span>
 					</div>
-				)}
+				)} */}
 				<button type="submit" className="btn_primary">
 					{buttonText}
 				</button>

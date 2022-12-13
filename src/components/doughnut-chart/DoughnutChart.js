@@ -4,7 +4,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DoughnutChart = ({ transaction, totalIncome, totalExpenses }) => {
+const DoughnutChart = ({ totalIncome, totalExpenses }) => {
 	const data = {
 		labels: ["Income", "Expenses"],
 		datasets: [

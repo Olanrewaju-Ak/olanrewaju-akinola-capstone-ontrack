@@ -18,15 +18,18 @@ body {
 h1,
 h2,
 h3,
-a,
 p {
 	margin: 0;
 	padding: 0;
 }
 
+a,
 ul,
+li,
 label,
 textarea {
+	list-style: none;
+	text-decoration: none;
 	margin: 0;
 	padding: 0;
 }
