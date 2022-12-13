@@ -32,8 +32,6 @@ const AccountPage = () => {
 		return total + amount;
 	}, 0);
 
-	console.log(totalFood);
-
 	/* *  Get total Housing Expenses * */
 	const getHousingCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "housing";
@@ -43,8 +41,6 @@ const AccountPage = () => {
 		const amount = item.amount;
 		return total + amount;
 	}, 0);
-
-	console.log(totalHousing);
 
 	/* *  Get total Transportation Expenses * */
 	const getTransportCategory = transactionsByCategory.filter((transactions) => {
@@ -56,8 +52,6 @@ const AccountPage = () => {
 		return total + amount;
 	}, 0);
 
-	console.log(totalTransport);
-
 	/* *  Get total Personal Expenses * */
 	const getPersonalCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "personal";
@@ -67,8 +61,6 @@ const AccountPage = () => {
 		const amount = item.amount;
 		return total + amount;
 	}, 0);
-
-	console.log(totalPersonal);
 
 	/* *  Get total Lifestyle Expenses * */
 	const getLifestyleCategory = transactionsByCategory.filter((transactions) => {
@@ -80,8 +72,6 @@ const AccountPage = () => {
 		return total + amount;
 	}, 0);
 
-	console.log(totalLifestyle);
-
 	/* *  Get total Utility Expenses * */
 	const getUtilityCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "utility";
@@ -91,8 +81,6 @@ const AccountPage = () => {
 		const amount = item.amount;
 		return total + amount;
 	}, 0);
-
-	console.log(totalUtility);
 
 	/* *  Get total Medical Expenses * */
 	const getMedicalCategory = transactionsByCategory.filter((transactions) => {
@@ -104,8 +92,6 @@ const AccountPage = () => {
 		return total + amount;
 	}, 0);
 
-	console.log(totalMedical);
-
 	/* *  Get total Others Expenses * */
 	const getOthersCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "others";
@@ -115,8 +101,6 @@ const AccountPage = () => {
 		const amount = item.amount;
 		return total + amount;
 	}, 0);
-
-	console.log(totalOthers);
 
 	return (
 		<div>

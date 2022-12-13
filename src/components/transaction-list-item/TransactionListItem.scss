@@ -30,13 +30,36 @@
 	display: flex;
 	justify-content: space-between;
 	border-radius: 0.5rem;
+	align-items: center;
+
+	&__left-side {
+		width: 40%;
+	}
+
+	&__right-side {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10%;
+		width: 20%;
+	}
 
 	&__icon {
 		background-color: none;
-		color: $highlight-Red;
+		// color: $highlight-Red;
 		// padding: 0.5rem;
 		// width: 1.5rem;
-		height: 1.2rem;
+		height: 1.875rem;
+
+		&-delete {
+			// filter: grayscale(100%);
+			filter: invert(12%) sepia(63%) saturate(0%) hue-rotate(246deg) brightness(0%)
+				contrast(10%);
+			&:hover {
+				filter: invert(13%) sepia(64%) saturate(7466%) hue-rotate(0deg) brightness(90%)
+					contrast(70%);
+			}
+		}
 	}
 
 	&__delete-btn {
@@ -46,12 +69,18 @@
 		height: 1.5rem;
 	}
 
-	&__description-text {
-		@include mobileBodyLarge;
-		font-weight: 700;
-		margin: 0.5rem 0;
-		color: $primary-Black;
+	&__description {
+		display: flex;
+		gap: 7%;
+		align-items: center;
+		&-text {
+			@include mobileBodyLarge;
+			font-weight: 700;
+			margin: 0.5rem 0;
+			color: $primary-Black;
+		}
 	}
+
 	&__details {
 		&--amount {
 			@include mobileBodyLarge;

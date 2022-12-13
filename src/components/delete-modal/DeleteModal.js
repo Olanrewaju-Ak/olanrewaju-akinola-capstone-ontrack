@@ -1,8 +1,10 @@
 import "./DeleteModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const DeleteModal = () => {
+const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => {
+	const navigate = useNavigate();
 	return (
 		<>
 			<section className="delete-modal__container">
@@ -17,14 +19,14 @@ const DeleteModal = () => {
 					</div>
 					<div className="delete-modal__title">
 						<h1 className="delete-modal__title-text">
-							{`Delete ${selectedWarehouse.warehouse_name} warehouse?`}
+							{`Delete ${selectedTransaction.description} transaction?`}
 						</h1>
 					</div>
 					<div className="delete-modal__body">
 						<p className="delete-modal__body-text">
 							{`Please confirm that you’d like to delete the
-							${selectedWarehouse.warehouse_name} warehouse from the list of
-							warehouses. You won’t be able to undo this action.`}
+							${selectedTransaction.description} transaction from the list of
+							transactions. You won’t be able to undo this action.`}
 						</p>
 					</div>
 
@@ -38,7 +40,7 @@ const DeleteModal = () => {
 						<button
 							className="delete-modal__button--delete"
 							onClick={() => {
-								deleteWarehouse();
+								deleteTransaction();
 								navigate("/");
 							}}
 						>

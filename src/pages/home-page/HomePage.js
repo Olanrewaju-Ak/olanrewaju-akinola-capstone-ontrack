@@ -11,13 +11,9 @@ const PORT = process.env.REACT_APP_PORT;
 
 const HomePage = () => {
 	const [transactions, updateTransactions] = useState([]);
-	const [selectedTransaction, setSelectedTransaction] = useState({
-		description: " ",
-		id: " "
-	});
 
 	const getTransactions = async () => {
-		const response = await axios.get("http://localhost:8080/api/transactions");
+		const response = await axios.get(`${URL}${PORT}/api/transactions`);
 		console.log(response.data);
 
 		updateTransactions(response.data);
@@ -30,23 +26,11 @@ const HomePage = () => {
 		} catch (error) {}
 	}, []);
 
-	const deleteTransaction = async () => {
-		await axios.delete(`${URL}${PORT}/api/transactions/${selectedTransaction.id}`);
-		// setOpenModal(false);
-
-		getTransactions();
-	};
 	return (
 		<div>
 			<OverView transactions={transactions} />
 			<IncomeExpenseCard />
-			<TransactionsPage
-				transactions={transactions}
-				selectedTransaction={selectedTransaction}
-				deleteTransaction={deleteTransaction}
-				setSelectedTransaction={setSelectedTransaction}
-				getTransactions={getTransactions}
-			/>
+			<TransactionsPage transactions={transactions} getTransactions={getTransactions} />
 		</div>
 	);
 };
