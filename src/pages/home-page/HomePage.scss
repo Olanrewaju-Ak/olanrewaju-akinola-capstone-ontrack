@@ -1,0 +1,28 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET   */
+@include breakpoint.medium {
+	.home-page {
+		&__top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	.chart-view {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+}

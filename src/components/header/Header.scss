@@ -2,75 +2,49 @@
 @use "../../styles/partials/breakpoints" as breakpoint;
 @use "../../styles/partials/mixins" as *;
 
-// .header {
-// 	background-color: $primary-blue;
-// 	display: flex;
-// 	justify-content: center;
-// 	padding: 1rem;
-// }
-
-// .nav-links__list {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	gap: 6%;
-// 	padding: 0.625rem;
-
-// 	&-item {
-// 		color: $primary-silver;
-
-// 		&:hover {
-// 			@include mobileLabelsLinksButtons;
-// 			color: $primary-White;
-// 			border-bottom: 3px solid $primary-White;
-// 		}
-// 	}
-// }
-
 .header {
-	// height: 12.5rem;
 	background-color: $primary-blue;
 	text-align: center;
 	&__logo {
 		width: 8rem;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 	}
-}
 
-.header-container {
-	padding: 1rem;
-}
+	&-container {
+		padding: 1rem;
+	}
 
-.header-nav {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	// gap: 1rem;
-	gap: 12%;
-	&__link {
-		text-decoration: none;
-		color: $primary-White;
-		width: 100%;
+	&-nav {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding-bottom: 0.25rem;
+		// gap: 1rem;
+		gap: 12%;
+		&__link {
+			text-decoration: none;
+			color: $primary-White;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 0.25rem;
 
-		&:hover {
+			&:hover {
+				@include mobileLabelsLinksButtons;
+				color: $primary-White;
+				border-bottom: 3px solid $primary-White;
+			}
+
+			&--active {
+				@extend .header-nav__link;
+				color: $primary-White;
+				border-bottom: 3px solid $primary-White;
+				// border-radius: 20px;
+			}
+		}
+		&__text {
 			@include mobileLabelsLinksButtons;
-			color: $primary-White;
-			border-bottom: 3px solid $primary-White;
 		}
-
-		&--active {
-			@extend .header-nav__link;
-			color: $primary-White;
-			border-bottom: 3px solid $primary-White;
-			// border-radius: 20px;
-		}
-	}
-	&__text {
-		@include mobileLabelsLinksButtons;
 	}
 }
 
@@ -80,6 +54,55 @@
 
 /*  TABLET  */
 @include breakpoint.medium {
+	.header {
+		// height: 12.5rem;
+		background-color: $primary-blue;
+		text-align: center;
+		&__logo {
+			width: 8rem;
+			// margin-bottom: 1.5rem;
+		}
+
+		&-container {
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			padding: 2rem 2rem 0;
+		}
+
+		&-nav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40%;
+			gap: 12%;
+			&__link {
+				text-decoration: none;
+				color: $primary-White;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 0.25rem;
+
+				&:hover {
+					@include desktopLabelsLinksButtons;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+
+				&--active {
+					@extend .header-nav__link;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+					// border-radius: 20px;
+				}
+			}
+			&__text {
+				@include desktopLabelsLinksButtons;
+			}
+		}
+	}
 }
 
 /*  DESKTOP  */

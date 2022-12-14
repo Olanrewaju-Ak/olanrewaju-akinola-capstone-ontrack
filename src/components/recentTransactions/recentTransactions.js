@@ -1,20 +1,32 @@
 import React from "react";
-import "./Transactions.scss";
+import "./recentTransactions.scss";
 import TransactionListItem from "../transaction-list-item/TransactionListItem";
+import { useNavigate } from "react-router-dom";
 
-const Transactions = ({
+const RecentTransactions = ({
 	transactions,
 	selectedTransaction,
 	deleteTransaction,
 	setSelectedTransaction
 }) => {
+	const navigate = useNavigate();
 	return (
 		<section className="transactions-list">
-			<p className="transactions-title">Recent Transactions</p>
+			<div className="transactions__title-bar">
+				<p className="transactions__title">Recent Transactions</p>
 
+				<button
+					className="transactions__title-button"
+					onClick={() => {
+						navigate("/account");
+					}}
+				>
+					View All Transactions
+				</button>
+			</div>
 			{transactions?.length
 				? transactions
-						.slice(0, 3)
+						.slice(0, 5)
 						.map((transaction) => (
 							<TransactionListItem
 								transaction={transaction}
@@ -29,4 +41,4 @@ const Transactions = ({
 	);
 };
 
-export default Transactions;
+export default RecentTransactions;

@@ -38,6 +38,16 @@ const Header = () => {
 							<p className="header-nav__text">Transactions</p>
 						</NavLink>
 					</div>
+					<div className="header-nav__link-container">
+						<NavLink
+							to={"/budgets"}
+							className={({ isActive }) =>
+								isActive ? "header-nav__link--active" : "header-nav__link"
+							}
+						>
+							<p className="header-nav__text">Budgets</p>
+						</NavLink>
+					</div>
 				</nav>
 			</section>
 		</header>

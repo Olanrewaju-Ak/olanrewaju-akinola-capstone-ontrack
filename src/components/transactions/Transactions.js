@@ -16,6 +16,7 @@ const Transactions = ({ transactions, getTransactions }) => {
 		id: " "
 	});
 
+	console.log(transactions);
 	const [openModal, setOpenModal] = useState(false);
 
 	const deleteTransaction = async () => {
@@ -36,8 +37,9 @@ const Transactions = ({ transactions, getTransactions }) => {
 
 	return (
 		<section className="transactions-list">
-			<p className="transactions-title">Recent Transactions</p>
-
+			<div className="transactions__title-bar">
+				<p className="transactions__title">All Transactions</p>
+			</div>
 			{transactions?.length
 				? transactions.map((transaction) => (
 						<TransactionListItem

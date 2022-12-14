@@ -20,9 +20,25 @@ const DoughnutChart = ({ totalIncome, totalExpenses }) => {
 		]
 	};
 
+	const plugin = {
+		id: "increase-legend-spacing",
+		beforeInit(chart) {
+			// Get reference to the original fit function
+			const originalFit = chart.legend.fit;
+
+			// Override the fit function
+			chart.legend.fit = function fit() {
+				// Call original function and bind scope in order to use `this` correctly inside it
+				originalFit.bind(chart.legend)();
+				// Change the height as suggested in another answers
+				this.height += 20;
+			};
+		}
+	};
+
 	return (
 		<div className="chart-block">
-			<Doughnut data={data} height={400}></Doughnut>
+			<Doughnut data={data} height={400} plugins={[plugin]}></Doughnut>
 		</div>
 	);
 };

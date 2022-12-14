@@ -67,11 +67,7 @@ const TransactionListItem = ({ transaction, setSelectedTransaction, setOpenModal
 								{transaction.amount.toFixed(2)}
 							</p>
 							<p className="transaction-card__details--date">
-								{new Date(transaction.date).toLocaleDateString("en-US", {
-									year: "numeric",
-									month: "2-digit",
-									day: "2-digit"
-								})}
+								{new Date(transaction.date).toDateString()}
 							</p>
 						</div>
 						<button

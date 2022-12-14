@@ -10,7 +10,7 @@ const PORT = process.env.REACT_APP_PORT;
 
 // console.log(URL);
 
-const Addtransaction = () => {
+const Addtransaction = ({ updateTransactions }) => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
 
 	const addNewTransaction = (values) => {
@@ -23,7 +23,7 @@ const Addtransaction = () => {
 				category: category,
 				date: date
 			})
-			.then((response) => console.log(response.data))
+			.then((response) => updateTransactions(response.data))
 			.catch((error) => console.log(error));
 	};
 	const initialValues = {
@@ -37,7 +37,6 @@ const Addtransaction = () => {
 	useEffect(() => {
 		try {
 			addNewTransaction();
-			// getTransactions();
 		} catch (error) {}
 	}, []);
 
