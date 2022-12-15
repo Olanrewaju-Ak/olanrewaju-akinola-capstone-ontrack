@@ -29,14 +29,31 @@ const BudgetCard = ({
 		});
 	};
 
-	const sum = (a, b) => {
-		return a + b;
-	};
+	// const sum = (a, b) => {
+	// 	return a + b;
+	// };
 
+	// const budgetExpenses = () => {
+	// 	budget.category === "medical"
+	// 		? sum(budget.amount_spent, totalMedical)
+	// 		: budget.category === "food"
+	// 		? sum(budget.amount_spent, totalFood)
+	// 		: budget.category === "utility"
+	// 		? sum(budget.amount_spent, totalUtility)
+	// 		: budget.category === "transport"
+	// 		? sum(budget.amount_spent, totalTransport)
+	// 		: budget.category === "lifestyle"
+	// 		? sum(budget.amount_spent, totalLifestyle)
+	// 		: budget.category === "housing"
+	// 		? sum(budget.amount_spent, totalHousing)
+	// 		: budget.category === "personal"
+	// 		? sum(budget.amount_spent, totalPersonal)
+	// 		: sum(budget.amount_spent, totalOthers);
+	// };
 	return (
 		<>
 			<section key={budget.id} className={"budget-list__item"}>
-				<div className="budget-card income">
+				<div className="budget-card ">
 					<div className="budget-card__left-side">
 						<div className="budget-card__description">
 							<img
@@ -69,53 +86,71 @@ const BudgetCard = ({
 					</div>
 					<div className="budget-card__right-side">
 						<div className="budget-card__details">
-							<p className="budget-card__details--amount">
+							<p
+								className={
+									budget.category === "medical" &&
+									totalMedical >= budget.max_amount
+										? "budget-card__details-amount--high"
+										: "budget-card__details-amount" &&
+										  (budget.category === "lifestyle" &&
+										  totalLifestyle >= budget.max_amount
+												? "budget-card__details-amount--high"
+												: "budget-card__details-amount") &&
+										  (budget.category === "utility" &&
+										  totalUtility > budget.max_amount
+												? "budget-card__details-amount--high"
+												: "budget-card__details-amount")
+								}
+							>
+								$
 								{budget.category === "medical"
-									? sum(budget.amount_spent, totalMedical)
+									? totalMedical
 									: budget.category === "food"
-									? sum(budget.amount_spent, totalFood)
+									? totalFood
 									: budget.category === "utility"
-									? sum(budget.amount_spent, totalUtility)
+									? totalUtility
 									: budget.category === "transport"
-									? sum(budget.amount_spent, totalTransport)
+									? totalTransport
 									: budget.category === "lifestyle"
-									? sum(budget.amount_spent, totalLifestyle)
+									? totalLifestyle
 									: budget.category === "housing"
-									? sum(budget.amount_spent, totalHousing)
+									? totalHousing
 									: budget.category === "personal"
-									? sum(budget.amount_spent, totalPersonal)
-									: sum(budget.amount_spent, totalOthers)}
+									? totalPersonal
+									: totalOthers}
 								/
-								<span className="budget-card__details--amount-max">
-									{budget.max_amount.toFixed(2)}
+								<span className="budget-card__details-amount--max">
+									${budget.max_amount.toFixed(2)}
 								</span>
 							</p>
-							<p className="budget-card__details--date">
-								<span>From: </span>
-								{new Date(budget.start_date).toLocaleDateString("en-US", {
-									year: "numeric",
-									month: "2-digit",
-									day: "2-digit"
-								})}
-							</p>
-							<p className="budget-card__details--date">
-								<span>To: </span>
-								{new Date(budget.end_date).toLocaleDateString("en-US", {
-									year: "numeric",
-									month: "2-digit",
-									day: "2-digit"
-								})}
-							</p>
+							<div className="budget-card__date-holder">
+								<p className="budget-card__details-date">
+									<span>From: </span>
+									{new Date(budget.start_date).toLocaleDateString("en-US", {
+										year: "numeric",
+										month: "2-digit",
+										day: "2-digit"
+									})}
+								</p>
+								<p className="budget-card__details-date">
+									<span>To: </span>
+									{new Date(budget.end_date).toLocaleDateString("en-US", {
+										year: "numeric",
+										month: "2-digit",
+										day: "2-digit"
+									})}
+								</p>
+							</div>
 						</div>
 						<button
-						// onClick={() => {
-						// 	setSelectedbudget({
-						// 		description: budget.description,
-						// 		id: budget.id
-						// 	});
-						// 	setOpenModal(true);
-						// }}
-						// className="budget-card__delete-btn"
+							// onClick={() => {
+							// 	setSelectedbudget({
+							// 		description: budget.description,
+							// 		id: budget.id
+							// 	});
+							// 	setOpenModal(true);
+							// }}
+							className="budget-card__delete-btn"
 						>
 							<img
 								src={deleteIcon}

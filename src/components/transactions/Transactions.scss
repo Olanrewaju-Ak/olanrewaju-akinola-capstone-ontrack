@@ -17,22 +17,22 @@
 		color: $primary-Black;
 		font-weight: 700;
 	}
-	&__title-button {
-		@include mobileLabelsLinksButtons;
-		width: 45%;
-		height: 2.5rem;
-		padding: 0.3rem;
-		font-weight: 700;
-		border: 1px solid $primary-blue;
-		border-radius: 1.25rem;
-		color: $primary-blue;
-		background-color: $primary-White;
+	// &__title-button {
+	// 	@include mobileLabelsLinksButtons;
+	// 	width: 45%;
+	// 	height: 2.5rem;
+	// 	padding: 0.3rem;
+	// 	font-weight: 700;
+	// 	border: 1px solid $primary-blue;
+	// 	border-radius: 1.25rem;
+	// 	color: $primary-blue;
+	// 	background-color: $primary-White;
 
-		&:hover {
-			color: $primary-White;
-			background-color: $primary-blue;
-		}
-	}
+	// 	&:hover {
+	// 		color: $primary-White;
+	// 		background-color: $primary-blue;
+	// 	}
+	// }
 }
 
 /*  MOBILE   */
@@ -43,7 +43,7 @@
 @include breakpoint.medium {
 	.transactions {
 		&-list {
-			padding: 1rem;
+			padding: 0rem 3rem;
 		}
 
 		&__title-bar {
@@ -57,22 +57,22 @@
 			color: $primary-Black;
 			font-weight: 700;
 		}
-		&__title-button {
-			@include mobileLabelsLinksButtons;
-			width: 25%;
-			height: 2.5rem;
-			padding: 0.3rem;
-			font-weight: 700;
-			border: 1px solid $primary-blue;
-			border-radius: 1.25rem;
-			color: $primary-blue;
-			background-color: $primary-White;
+		// &__title-button {
+		// 	@include desktopLabelsLinksButtons;
+		// 	width: 25%;
+		// 	height: 2.5rem;
+		// 	padding: 0.3rem;
+		// 	font-weight: 700;
+		// 	border: 1px solid $primary-blue;
+		// 	border-radius: 1.25rem;
+		// 	color: $primary-blue;
+		// 	background-color: $primary-White;
 
-			&:hover {
-				color: $primary-White;
-				background-color: $primary-blue;
-			}
-		}
+		// 	&:hover {
+		// 		color: $primary-White;
+		// 		background-color: $primary-blue;
+		// 	}
+		// }
 	}
 }
 

@@ -2,7 +2,7 @@ import "./Transactions.scss";
 import TransactionListItem from "../transaction-list-item/TransactionListItem";
 
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Modal from "react-modal";
 import DeleteModal from "../delete-modal/DeleteModal";

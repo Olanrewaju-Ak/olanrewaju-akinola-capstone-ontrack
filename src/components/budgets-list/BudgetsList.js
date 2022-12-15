@@ -16,7 +16,7 @@ const BudgetsList = ({
 }) => {
 	return (
 		<section className="budgets-list">
-			<p className="budgets-title">Budgets</p>
+			<p className="budgets-list__title"> Your Budgets</p>
 
 			{budgets?.length
 				? budgets.map((budget) => (

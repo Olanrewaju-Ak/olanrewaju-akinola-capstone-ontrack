@@ -31,7 +31,7 @@ const TransactionListItem = ({ transaction, setSelectedTransaction, setOpenModal
 					}
 				>
 					<div className="transaction-card__left-side">
-						<div className="transaction-card__description">
+						<div className="transaction-card__image">
 							<img
 								src={
 									transaction.category === "medical"
@@ -55,8 +55,14 @@ const TransactionListItem = ({ transaction, setSelectedTransaction, setOpenModal
 								alt="category-icon"
 								className="transaction-card__icon"
 							/>
+						</div>
+						<div className="transaction-card__description">
 							<p className="transaction-card__description-text">
 								{toTitleCase(transaction.description)}
+							</p>
+
+							<p className="transaction-card__description-text--category">
+								{toTitleCase(transaction.category)}
 							</p>
 						</div>
 					</div>

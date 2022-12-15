@@ -11,22 +11,22 @@ const RecentTransactions = ({
 }) => {
 	const navigate = useNavigate();
 	return (
-		<section className="transactions-list">
-			<div className="transactions__title-bar">
-				<p className="transactions__title">Recent Transactions</p>
+		<section className="recent-transactions-list">
+			<div className="recent-transactions__title-bar">
+				<p className="recent-transactions__title">Recent Transactions</p>
 
 				<button
-					className="transactions__title-button"
+					className="recent-transactions__title-button"
 					onClick={() => {
 						navigate("/account");
 					}}
 				>
-					View All Transactions
+					VIEW ALL TRANSACTIONS
 				</button>
 			</div>
 			{transactions?.length
 				? transactions
-						.slice(0, 5)
+						.slice(0, 3)
 						.map((transaction) => (
 							<TransactionListItem
 								transaction={transaction}

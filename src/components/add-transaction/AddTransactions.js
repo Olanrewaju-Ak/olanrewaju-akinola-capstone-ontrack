@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AddForm from "../add-form/AddForm";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import "./AddTransactions.scss";
+import AddForm from "../add-form/AddForm";
 
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
@@ -54,13 +54,13 @@ const Addtransaction = ({ updateTransactions }) => {
 	return (
 		<section className="container">
 			<div className="add-transaction">
-				{/* <p className="add-transaction__title">Addtransaction</p> */}
+				<p className="add-transaction__title">Add a New Transaction</p>
 
 				<button
 					onClick={() => setAddFormVisible(!isAddformVisible)}
-					className="btn_secondary"
+					className="add-transaction__btn--secondary"
 				>
-					{isAddformVisible ? "Cancel" : "ADD TRANSACTION"}
+					{isAddformVisible ? "CANCEL" : "ADD TRANSACTION"}
 				</button>
 			</div>
 			{isAddformVisible && modal}

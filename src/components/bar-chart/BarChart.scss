@@ -1,3 +1,22 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .bar-chart__block {
 	padding: 2rem;
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET   */
+@include breakpoint.medium {
+	.bar-chart__block {
+		padding: 2rem 3rem;
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
 }

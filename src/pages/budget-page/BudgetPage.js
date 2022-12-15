@@ -4,6 +4,7 @@ import axios from "axios";
 
 import "./BudgetPage.scss";
 import BudgetsList from "../../components/budgets-list/BudgetsList";
+import AddBudget from "../../components/add-budget/AddBudget";
 
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
@@ -120,8 +121,8 @@ const BudgetPage = () => {
 
 	return (
 		<section className="budget-page">
-			BudgetPage
 			<div>
+				<AddBudget updateBudgets={updateBudgets} />
 				<BudgetsList
 					budgets={budgets}
 					totalHousing={totalHousing}

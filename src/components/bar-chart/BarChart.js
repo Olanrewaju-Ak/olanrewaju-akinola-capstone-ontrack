@@ -73,7 +73,7 @@ const BarChart = ({
 	};
 	return (
 		<div className="bar-chart__block">
-			<Bar data={data} options={options}></Bar>
+			<Bar data={data} options={options} height={250}></Bar>
 		</div>
 	);
 };

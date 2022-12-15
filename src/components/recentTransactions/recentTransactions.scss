@@ -2,7 +2,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.transactions {
+.recent-transactions {
 	&-list {
 		padding: 1rem;
 	}
@@ -10,19 +10,19 @@
 	&__title-bar {
 		display: flex;
 		align-items: center;
-		gap: 10%;
+		gap: 8%;
 	}
 	&__title {
-		@include mobileBodyLarge;
+		@include mobileBodyMedium;
 		color: $primary-Black;
 		font-weight: 700;
 	}
 	&__title-button {
 		@include mobileLabelsLinksButtons;
-		width: 45%;
+		width: 53%;
 		height: 2.5rem;
 		padding: 0.3rem;
-		font-weight: 700;
+		font-weight: 500;
 		border: 1px solid $primary-blue;
 		border-radius: 1.25rem;
 		color: $primary-blue;
@@ -41,16 +41,17 @@
 
 /*  TABLET  */
 @include breakpoint.medium {
-	.transactions {
-		&-list {
-			padding: 1rem;
-		}
+	.recent-transactions {
+		// &-list {
+		// 	padding: 0 1rem;
+		// }
 
 		&__title-bar {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			gap: 10%;
+			margin-bottom: 1rem;
 		}
 		&__title {
 			@include desktopBodyLarge;
@@ -58,8 +59,8 @@
 			font-weight: 700;
 		}
 		&__title-button {
-			@include mobileLabelsLinksButtons;
-			width: 25%;
+			@include desktopLabelsLinksButtons;
+			width: 40%;
 			height: 2.5rem;
 			padding: 0.3rem;
 			font-weight: 700;

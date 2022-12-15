@@ -52,7 +52,7 @@ const HomePage = () => {
 			getExpenses();
 			getIncome();
 		} catch (error) {}
-	}, []);
+	}, [transactions]);
 
 	const totalExpenses = expenses.reduce((total, item) => {
 		const amount = item.amount;
