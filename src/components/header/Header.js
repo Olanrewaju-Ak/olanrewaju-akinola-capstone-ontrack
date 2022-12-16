@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<header className="header">
 			<section className="header-container">
-				<Link to="/">
+				<Link to="/home">
 					<img
 						src={logo}
 						alt="logo"
@@ -20,7 +20,7 @@ const Header = () => {
 				<nav className="header-nav">
 					<div className="header-nav__link-container">
 						<NavLink
-							to={"/"}
+							to={"/home"}
 							className={({ isActive }) =>
 								isActive ? "header-nav__link--active" : "header-nav__link"
 							}

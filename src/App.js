@@ -1,8 +1,9 @@
 import "./App.scss";
 
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import LandingPage from "./pages/landing-page/LandingPage";
 import Header from "./components/header/Header";
 import HomePage from "./pages/home-page/HomePage";
 import AccountPage from "./pages/account-page/AccountPage";
@@ -15,7 +16,8 @@ function App() {
 			<div className="App">
 				<Header />
 				<Routes>
-					<Route path="/" element={<HomePage />} />
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/home" element={<HomePage />} />
 
 					<Route path="/account" element={<AccountPage />} />
 

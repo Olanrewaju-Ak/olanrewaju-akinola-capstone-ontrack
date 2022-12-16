@@ -41,7 +41,7 @@ const BudgetDeleteModal = ({ closeModal, deleteBudget, selectedBudget }) => {
 							className="delete-modal__button--delete"
 							onClick={() => {
 								deleteBudget();
-								navigate("/");
+								navigate("/budgets");
 							}}
 						>
 							Delete
