@@ -7,7 +7,8 @@ const RecentTransactions = ({
 	transactions,
 	selectedTransaction,
 	deleteTransaction,
-	setSelectedTransaction
+	updateSelectedTransaction,
+	setOpenModal
 }) => {
 	const navigate = useNavigate();
 	return (
@@ -33,7 +34,8 @@ const RecentTransactions = ({
 								key={transaction.id}
 								selectedTransaction={selectedTransaction}
 								deleteTransaction={deleteTransaction}
-								setSelectedTransaction={setSelectedTransaction}
+								updateSelectedTransaction={updateSelectedTransaction}
+								setOpenModal={setOpenModal}
 							/>
 						))
 				: ""}

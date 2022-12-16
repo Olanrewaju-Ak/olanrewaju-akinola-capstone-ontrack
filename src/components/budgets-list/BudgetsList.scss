@@ -30,4 +30,12 @@
 
 /*  DESKTOP  */
 @include breakpoint.large {
+	.budgets-list {
+		padding: 0 4rem;
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
 }

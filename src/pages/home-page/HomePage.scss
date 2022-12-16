@@ -41,4 +41,28 @@
 
 /*  DESKTOP  */
 @include breakpoint.large {
+	.home-page {
+		// padding: 0 3rem;
+
+		&__top {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12%;
+			padding: 0 3rem;
+
+			&-left {
+				width: 45%;
+			}
+			&-right {
+				width: 45%;
+			}
+		}
+	}
+
+	.chart-view {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+	}
 }

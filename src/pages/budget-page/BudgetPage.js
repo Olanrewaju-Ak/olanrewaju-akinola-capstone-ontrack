@@ -124,6 +124,7 @@ const BudgetPage = () => {
 			<div>
 				<AddBudget updateBudgets={updateBudgets} />
 				<BudgetsList
+					updateBudgets={updateBudgets}
 					budgets={budgets}
 					totalHousing={totalHousing}
 					totalFood={totalFood}

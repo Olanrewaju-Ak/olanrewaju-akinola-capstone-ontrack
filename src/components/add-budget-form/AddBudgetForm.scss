@@ -119,6 +119,7 @@
 		}
 	}
 }
+
 /*  TABLET   */
 @include breakpoint.medium {
 	.budget-form {
@@ -126,6 +127,32 @@
 			display: flex;
 			flex-direction: column;
 			padding: 0 3rem;
+			gap: 0.625rem;
+		}
+
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+
+		&__btn--primary {
+			@include buttonPrimary;
+			@include desktopBodyMedium;
+			font-weight: 700;
+			margin: 2rem 0;
+			width: 40%;
+		}
+	}
+}
+
+/*  	DESKTOP    */
+@include breakpoint.large {
+	.budget-form {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			padding: 0 4rem;
 			gap: 0.625rem;
 		}
 

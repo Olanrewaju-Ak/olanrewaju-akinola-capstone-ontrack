@@ -10,7 +10,7 @@ const PORT = process.env.REACT_APP_PORT;
 
 // console.log(URL);
 
-const Addtransaction = ({ updateTransactions }) => {
+const Addtransactions = ({ updateTransactions }) => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
 
 	const addNewTransaction = (values) => {
@@ -68,4 +68,4 @@ const Addtransaction = ({ updateTransactions }) => {
 	);
 };
 
-export default Addtransaction;
+export default Addtransactions;

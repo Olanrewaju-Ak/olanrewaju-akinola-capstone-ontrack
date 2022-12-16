@@ -3,8 +3,11 @@ import { useState } from "react";
 
 import "./AddBudgetForm.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
+import { useNavigate } from "react-router-dom";
 
 const AddBudgetForm = ({ setAddBudgetFormVisible, requestHandler, initialValues, buttonText }) => {
+	const navigate = useNavigate();
+
 	const [values, setValues] = useState(initialValues);
 
 	// form validation states
@@ -40,6 +43,7 @@ const AddBudgetForm = ({ setAddBudgetFormVisible, requestHandler, initialValues,
 			setIsError(false);
 			requestHandler(values);
 			setAddBudgetFormVisible(false);
+			navigate("/budgets");
 		}
 
 		event.target.reset();

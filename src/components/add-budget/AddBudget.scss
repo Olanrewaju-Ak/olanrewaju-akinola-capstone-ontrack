@@ -3,43 +3,68 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/breakpoints" as breakpoint;
 
-.container {
-	display: flex;
-	flex-direction: column;
-	// justify-content: space-between;
+/*  MOBILE   */
+@include breakpoint.small {
+	.container {
+		display: flex;
+		flex-direction: column;
+		// justify-content: space-between;
+	}
+
+	.add-budget {
+		padding: 2rem 1rem;
+		display: flex;
+		justify-content: center;
+
+		&__title {
+			display: none;
+		}
+		&__btn--secondary {
+			@include buttonSecondary;
+			@include mobileLabelsLinksButtons;
+			width: 100%;
+			height: 2.5rem;
+			padding: 0.625rem;
+			font-weight: 700;
+		}
+	}
 }
 
-.add-budget {
-	padding: 2rem 1rem;
-	display: flex;
-	justify-content: center;
-
-	&__title {
-		display: none;
-	}
-	&__btn--secondary {
-		@include buttonSecondary;
-		@include mobileLabelsLinksButtons;
+/*  TABLET  */
+@include breakpoint.medium {
+	.add-budget {
 		width: 100%;
+		padding: 1rem 3rem;
+		display: flex;
+
+		justify-content: space-between;
+		gap: 4%;
+		align-items: center;
+		margin: 1rem 0;
+
+		&__title {
+			display: block;
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
+
+	.add-budget__btn--secondary {
+		@include buttonSecondary;
+		@include desktopLabelsLinksButtons;
+		width: 40%;
 		height: 2.5rem;
 		padding: 0.625rem;
 		font-weight: 700;
 	}
 }
 
-/*  MOBILE   */
-@include breakpoint.small {
-}
-
-/*  TABLET  */
-@include breakpoint.medium {
+/*  DESKTOP  */
+@include breakpoint.large {
 	.add-budget {
-		// padding: 2rem 3rem;
-		// width: 100%;
-		// display: flex;
-		// justify-content: flex-start;
 		width: 100%;
-		padding: 1rem 3rem;
+		padding: 1rem 4rem;
 		display: flex;
 
 		justify-content: space-between;

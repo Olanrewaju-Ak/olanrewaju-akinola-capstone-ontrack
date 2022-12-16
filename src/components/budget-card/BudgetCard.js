@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./BudgetCard.scss";
 import medicalIcon from "../../assets/icons/first-aid-kit.png";
@@ -14,6 +15,8 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 
 const BudgetCard = ({
 	budget,
+	setSelectedBudget,
+	setOpenModal,
 	totalFood,
 	totalHousing,
 	totalTransport,
@@ -29,27 +32,7 @@ const BudgetCard = ({
 		});
 	};
 
-	// const sum = (a, b) => {
-	// 	return a + b;
-	// };
-
-	// const budgetExpenses = () => {
-	// 	budget.category === "medical"
-	// 		? sum(budget.amount_spent, totalMedical)
-	// 		: budget.category === "food"
-	// 		? sum(budget.amount_spent, totalFood)
-	// 		: budget.category === "utility"
-	// 		? sum(budget.amount_spent, totalUtility)
-	// 		: budget.category === "transport"
-	// 		? sum(budget.amount_spent, totalTransport)
-	// 		: budget.category === "lifestyle"
-	// 		? sum(budget.amount_spent, totalLifestyle)
-	// 		: budget.category === "housing"
-	// 		? sum(budget.amount_spent, totalHousing)
-	// 		: budget.category === "personal"
-	// 		? sum(budget.amount_spent, totalPersonal)
-	// 		: sum(budget.amount_spent, totalOthers);
-	// };
+	const navigate = useNavigate();
 	return (
 		<>
 			<section key={budget.id} className={"budget-list__item"}>
@@ -143,13 +126,14 @@ const BudgetCard = ({
 							</div>
 						</div>
 						<button
-							// onClick={() => {
-							// 	setSelectedbudget({
-							// 		description: budget.description,
-							// 		id: budget.id
-							// 	});
-							// 	setOpenModal(true);
-							// }}
+							onClick={() => {
+								setSelectedBudget({
+									description: budget.category,
+									id: budget.id
+								});
+								setOpenModal(true);
+								navigate("/budgets");
+							}}
 							className="budget-card__delete-btn"
 						>
 							<img

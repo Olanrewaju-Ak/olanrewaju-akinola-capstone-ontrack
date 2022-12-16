@@ -9,10 +9,13 @@
 /*  TABLET   */
 @include breakpoint.medium {
 	.transactions-page {
-		padding: 0 4rem;
+		padding: 0 3rem;
 	}
 }
 
 /*  DESKTOP  */
 @include breakpoint.large {
+	.transactions-page {
+		padding: 0 4rem;
+	}
 }

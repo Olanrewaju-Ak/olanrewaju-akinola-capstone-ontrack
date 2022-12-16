@@ -1,6 +1,7 @@
 import "./TransactionListItem.scss";
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import medicalIcon from "../../assets/icons/first-aid-kit.png";
 import lifestyleIcon from "../../assets/icons/lifesyle.png";
@@ -13,7 +14,9 @@ import subsIcon from "../../assets/icons/subs.png";
 import incomeIcon from "../../assets/icons/income.png";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 
-const TransactionListItem = ({ transaction, setSelectedTransaction, setOpenModal }) => {
+const TransactionListItem = ({ transaction, setOpenModal, updateSelectedTransaction }) => {
+	const navigate = useNavigate();
+
 	const toTitleCase = (str) => {
 		return str.replace(/\w\S*/g, function (txt) {
 			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -78,11 +81,12 @@ const TransactionListItem = ({ transaction, setSelectedTransaction, setOpenModal
 						</div>
 						<button
 							onClick={() => {
-								setSelectedTransaction({
+								updateSelectedTransaction({
 									description: transaction.description,
 									id: transaction.id
 								});
 								setOpenModal(true);
+								navigate("/account");
 							}}
 							className="transaction-card__delete-btn"
 						>

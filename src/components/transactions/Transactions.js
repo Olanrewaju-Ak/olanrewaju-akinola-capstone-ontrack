@@ -11,14 +11,15 @@ const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
 
 const Transactions = ({ transactions, getTransactions }) => {
-	const [selectedTransaction, setSelectedTransaction] = useState({
+	const [selectedTransaction, updateSelectedTransaction] = useState({
 		description: " ",
 		id: " "
 	});
 
-	console.log(transactions);
+	// console.log(transactions);
 	const [openModal, setOpenModal] = useState(false);
 
+	console.log(selectedTransaction);
 	const deleteTransaction = async () => {
 		await axios.delete(`${URL}${PORT}/api/transactions/${selectedTransaction.id}`);
 		setOpenModal(false);
@@ -26,7 +27,7 @@ const Transactions = ({ transactions, getTransactions }) => {
 	};
 
 	const modal = (
-		<Modal isOpen={openModal} ariaHideApp={false} className="warehouse-list__delete-modal">
+		<Modal isOpen={openModal} ariaHideApp={false} className="delete-modal">
 			<DeleteModal
 				closeModal={setOpenModal}
 				deleteTransaction={deleteTransaction}
@@ -45,7 +46,7 @@ const Transactions = ({ transactions, getTransactions }) => {
 						<TransactionListItem
 							transaction={transaction}
 							key={transaction.id}
-							setSelectedTransaction={setSelectedTransaction}
+							updateSelectedTransaction={updateSelectedTransaction}
 							setOpenModal={setOpenModal}
 						/>
 				  ))

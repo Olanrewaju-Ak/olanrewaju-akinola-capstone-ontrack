@@ -72,7 +72,11 @@ const HomePage = () => {
 					<IncomeExpenseCard totalIncome={totalIncome} totalExpenses={totalExpenses} />
 				</div>
 				<div className="home-page__top-right chart-view">
-					<IncomeExpensesChart totalIncome={totalIncome} totalExpenses={totalExpenses} />
+					<IncomeExpensesChart
+						totalIncome={totalIncome}
+						totalExpenses={totalExpenses}
+						transactions={transactions}
+					/>
 				</div>
 			</div>
 

@@ -210,4 +210,9 @@
 
 /*  DESKTOP  */
 @include breakpoint.large {
+	.addform {
+		&-container {
+			padding: 1rem 4rem;
+		}
+	}
 }

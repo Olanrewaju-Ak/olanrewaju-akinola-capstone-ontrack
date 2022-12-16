@@ -12,6 +12,8 @@
 			height: 100vh;
 			width: 100%;
 			padding: 3.75rem 1rem;
+			display: flex;
+			align-items: center;
 		}
 
 		&__title {
@@ -24,7 +26,7 @@
 		}
 
 		&__body {
-			margin-bottom: 23.8125rem;
+			margin-bottom: 4rem;
 
 			&-text {
 				color: $primary-Black;
@@ -86,23 +88,21 @@
 /*TABLET*/
 @include breakpoint.medium {
 	.delete-modal {
-		&__delete-modal-container {
+		&__container {
 			background-color: rgba($primary-Black, 0.7);
 			height: 100vh;
 			padding: 11.5625rem 3rem 36.0625rem 3rem;
 		}
 
-		&__modal-content {
+		&__content {
 			position: relative;
-			background-color: $primary-White;
+			background-color: $primary-light-blue;
 			width: 42rem;
 			height: 16.375rem;
 			padding: 2.5rem 4rem;
 			border-radius: 3px;
 		}
-	}
 
-	.modal {
 		&__title {
 			margin-bottom: 1rem;
 
@@ -173,23 +173,21 @@
 /*DESKTOP*/
 @include breakpoint.medium {
 	.delete-modal {
-		&__delete-modal-container {
+		&__container {
 			background-color: rgba($primary-Black, 0.7);
 			height: 100vh;
 			padding: 11.5625rem 3rem 36.0625rem 3rem;
 		}
 
-		&__modal-content {
+		&__content {
 			position: relative;
-			background-color: $primary-White;
+			background-color: $primary-light-blue;
 			width: 42rem;
 			height: 16.375rem;
 			padding: 2.5rem 4rem;
 			border-radius: 3px;
 		}
-	}
 
-	.modal {
 		&__title {
 			margin-bottom: 1rem;
 
