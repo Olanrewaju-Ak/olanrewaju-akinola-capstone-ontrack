@@ -1,0 +1,192 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.income-expense {
+	padding: 1rem;
+}
+
+.cards {
+	display: flex;
+	justify-content: center;
+	gap: 5%;
+}
+
+.card {
+	@include boxShadow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 0.8rem;
+	width: 10.25rem;
+	height: 5rem;
+	padding: 0.8rem;
+	gap: 10%;
+
+	&-income {
+		background-color: $highlight-Green;
+	}
+
+	&-expense {
+		background-color: $highlight-Red;
+	}
+
+	&__icon {
+		background-color: $background-Light-Grey;
+		border-radius: 0.5rem;
+
+		&-img {
+			width: 3rem;
+			height: 3rem;
+		}
+	}
+
+	&__detail {
+		display: flex;
+		flex-direction: column;
+
+		&-title {
+			@include mobileBodyMedium;
+			color: $primary-White;
+			font-weight: 500;
+		}
+		&-amount {
+			@include mobileBodyLarge;
+			color: $primary-White;
+			font-weight: 700;
+		}
+	}
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.income-expense {
+		padding: 1rem;
+	}
+
+	.cards {
+		display: flex;
+		justify-content: center;
+		gap: 5%;
+	}
+
+	.card {
+		@include boxShadow;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		border-radius: 0.8rem;
+		width: 12.5rem;
+		height: 6.0625rem;
+		padding: 1rem;
+		gap: 15%;
+
+		&:hover {
+			transform: scale(2);
+		}
+
+		&-income {
+			background-color: $highlight-Green;
+		}
+
+		&-expense {
+			background-color: $highlight-Red;
+		}
+
+		&__icon {
+			background-color: $background-Light-Grey;
+			border-radius: 0.5rem;
+
+			&-img {
+				width: 3rem;
+				height: 3rem;
+			}
+		}
+
+		&__detail {
+			display: flex;
+			flex-direction: column;
+
+			&-title {
+				@include desktopBodyMedium;
+				color: $primary-White;
+				font-weight: 500;
+			}
+			&-amount {
+				@include desktopBodyLarge;
+				color: $primary-White;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.income-expense {
+		padding: 1rem;
+	}
+
+	.cards {
+		display: flex;
+		justify-content: center;
+		gap: 5%;
+	}
+
+	.card {
+		@include boxShadow;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		border-radius: 0.8rem;
+		width: 12.5rem;
+		height: 6.0625rem;
+		padding: 1rem;
+		gap: 15%;
+
+		&:hover {
+			transform: scale(2);
+		}
+
+		&-income {
+			background-color: $highlight-Green;
+		}
+
+		&-expense {
+			background-color: $highlight-Red;
+		}
+
+		&__icon {
+			background-color: $background-Light-Grey;
+			border-radius: 0.5rem;
+
+			&-img {
+				width: 3rem;
+				height: 3rem;
+			}
+		}
+
+		&__detail {
+			display: flex;
+			flex-direction: column;
+
+			&-title {
+				@include desktopBodyMedium;
+				color: $primary-White;
+				font-weight: 500;
+			}
+			&-amount {
+				@include desktopBodyLarge;
+				color: $primary-White;
+				font-weight: 700;
+			}
+		}
+	}
+}

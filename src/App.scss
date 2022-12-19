@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+@use "./styles/partials/breakpoints" as breakpoint;
+@use "./styles/partials/colors" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/resets" as *;
+
+/* MOBILE  */
+@include breakpoint.small {
+	.app {
+		height: 100vh;
+	}
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*  TABLET  */
+@include breakpoint.medium {
+	.app {
+		height: 100vh;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*  DESKTOP  */
+@include breakpoint.large {
+	.app {
+		height: 100vh;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
 }

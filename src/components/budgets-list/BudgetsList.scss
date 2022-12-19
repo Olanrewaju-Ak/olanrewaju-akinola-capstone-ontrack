@@ -1,0 +1,41 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+.budgets-list {
+	padding: 1rem;
+	&__title {
+		@include mobileBodyLarge;
+		color: $primary-Black;
+		font-weight: 700;
+	}
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET   */
+@include breakpoint.medium {
+	.budgets-list {
+		padding: 0 3rem;
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.budgets-list {
+		padding: 0 4rem;
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
+}

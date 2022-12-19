@@ -1,0 +1,66 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.transactions {
+	&-list {
+		padding: 1rem;
+	}
+
+	&__title-bar {
+		display: flex;
+		align-items: center;
+		gap: 10%;
+	}
+	&__title {
+		@include mobileBodyLarge;
+		color: $primary-Black;
+		font-weight: 700;
+	}
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.transactions {
+		&-list {
+			padding: 0rem 3rem;
+		}
+
+		&__title-bar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10%;
+		}
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.transactions {
+		&-list {
+			padding: 0rem 4rem;
+		}
+
+		&__title-bar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10%;
+		}
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+	}
+}

@@ -1,0 +1,101 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+.overview {
+	&__section {
+		display: flex;
+		justify-content: center;
+		padding: 1rem 2rem;
+	}
+
+	&__balance {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&--title {
+			@include mobileBodyLarge;
+			color: $primary-silver;
+			font-weight: 700;
+		}
+
+		&--text-good {
+			@include mobilePageHeader;
+			color: $primary-blue;
+		}
+		&--text-bad {
+			@include mobilePageHeader;
+			color: $highlight-Red;
+		}
+	}
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.overview {
+		&__section {
+			display: flex;
+			justify-content: center;
+			padding: 1rem 3rem;
+		}
+
+		&__balance {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&--title {
+				@include desktopBodyLarge;
+				font-weight: 700;
+				color: $primary-silver;
+			}
+
+			&--text-good {
+				@include desktopPageHeader;
+				color: $primary-blue;
+			}
+			&--text-bad {
+				@include desktopPageHeader;
+				color: $highlight-Red;
+			}
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.overview {
+		&__section {
+			display: flex;
+			justify-content: center;
+			padding: 1rem 3rem;
+		}
+
+		&__balance {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&--title {
+				@include desktopBodyLarge;
+				font-weight: 700;
+				color: $primary-silver;
+			}
+
+			&--text-good {
+				@include desktopPageHeader;
+				color: $primary-blue;
+			}
+			&--text-bad {
+				@include desktopPageHeader;
+				color: $highlight-Red;
+			}
+		}
+	}
+}

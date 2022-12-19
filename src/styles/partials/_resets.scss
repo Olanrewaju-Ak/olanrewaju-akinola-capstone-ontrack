@@ -2,42 +2,48 @@
 
 html,
 body {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Titillium";
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "inter";
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 /* remove default margins for more control of spacing */
 h1,
 h2,
 h3,
-a,
 p {
-  margin: 0;
+	margin: 0;
+	padding: 0;
 }
 
+a,
 ul,
+li,
 label,
 textarea {
-  margin: 0;
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
 }
 textarea,
 input {
-  font-family: inherit;
+	font-family: inherit;
 }
 
 select {
-  font-family: "Titillium";
+	font-family: "inter";
 }
 
 fieldset {
-  padding: 0;
-  border: none;
-  margin: 0;
+	padding: 0;
+	border: none;
+	margin: 0;
 }
