@@ -5,113 +5,176 @@
 
 .addform {
 	&-container {
-		// display: flex;
-		// flex-direction: column;
 		padding: 1rem;
 		gap: 0.625rem;
 	}
 }
 
 .form {
-	&-control {
-		border: 1px solid $primary-silver;
+	&__input {
+		border: 1px solid $secondary-cloud;
 		border-radius: 0.8rem;
 		color: $primary-Black;
-		// display: block;
 		@include mobileBodyMedium;
-		padding: 0.625rem;
+		padding: 0.625rem 1rem;
 		width: 100%;
-		margin: 1rem 0 0.5rem;
 
-		&__radio-buttons {
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			@include mobileBodyMedium;
-			color: $primary-Black;
-			margin-bottom: 1rem;
-			gap: 5%;
-
-			&--input {
-				margin: 0;
-			}
-
-			&--income {
-				display: flex;
-				align-items: center;
-				gap: 6%;
-			}
-			&--expense {
-				display: flex;
-				align-items: center;
-				gap: 6%;
-			}
+		&:focus {
+			outline: none;
+			border: 1px solid $primary-blue;
 		}
+
+		&::placeholder {
+			color: $primary-silver;
+		}
+		&--error {
+			@extend .form__input;
+			border: 1px solid $highlight-Red;
+		}
+	}
+
+	&__label {
+		@include mobileLabelsLinksButtons;
+		color: $primary-Black;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		margin-top: 1rem;
+	}
+
+	&__select-container {
+		width: 100%;
+		overflow: hidden;
+		background: url("../../assets/icons/arrow_drop_down-24px.svg") no-repeat top 0.4rem right
+			1rem #fff;
+	}
+	&__select {
+		@include mobileBodyMedium;
+		width: 100%;
+		border-radius: 0.8rem;
+		border: 1px solid $secondary-cloud;
+		padding: 0.625rem 1rem;
+		background: transparent;
+		appearance: none;
+		color: $primary-Black;
+		&:focus {
+			outline: none;
+			border: 1px solid $primary-blue;
+		}
+		&::placeholder {
+			color: $primary-silver;
+		}
+	}
+
+	&__select option {
+		&:hover {
+			background-color: $secondary-cloud;
+		}
+	}
+
+	&__error-container {
+		margin-top: 0.25rem;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+	&__error-icon {
+		height: 0.75rem;
+	}
+	&__error-message {
+		@include mobileBodySmall;
+		color: $highlight-Red;
 	}
 }
 
-.btn_primary {
+.btn__primary {
 	@include buttonPrimary;
 	@include mobileBodyMedium;
+	margin: 2rem 0 0;
 }
 
 /*  MOBILE   */
 @include breakpoint.small {
 	.addform {
 		&-container {
-			// display: flex;
-			// flex-direction: column;
 			padding: 1rem;
 			gap: 0.625rem;
 		}
 	}
 
+	.btn__primary {
+		width: 100%;
+	}
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.addform {
+		&-container {
+			padding: 1rem 3rem;
+		}
+	}
+
 	.form {
-		&-control {
+		&__input {
 			border: 1px solid $secondary-cloud;
 			border-radius: 0.8rem;
 			color: $primary-Black;
-			// display: block;
-			@include mobileBodyMedium;
-			padding: 0.625rem;
+			@include desktopBodyMedium;
+			padding: 0.625rem 1rem;
 			width: 100%;
-			margin: 1rem 0 0.5rem;
-			outline: none;
 
-			// &:hover {
-			// 	background-color: #018abe;
-			// }
-
-			&__option {
-				width: 100%;
-
-				// padding: 0.625rem;
+			&:focus {
+				outline: none;
+				border: 1px solid $primary-blue;
 			}
 
-			// &__radio-buttons {
-			// 	display: flex;
-			// 	justify-content: flex-start;
-			// 	align-items: center;
-			// 	@include mobileBodyMedium;
-			// 	color: $primary-Black;
-			// 	margin-bottom: 1rem;
-			// 	gap: 5%;
+			&::placeholder {
+				color: $primary-silver;
+			}
+			&--error {
+				@extend .form__input;
+				border: 1px solid $highlight-Red;
+			}
+		}
 
-			// 	&--input {
-			// 		margin: 0;
-			// 	}
+		&__label {
+			@include desktopLabelsLinksButtons;
+			color: $primary-Black;
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+			margin-top: 1rem;
+		}
 
-			// 	&--income {
-			// 		display: flex;
-			// 		align-items: center;
-			// 		gap: 6%;
-			// 	}
-			// 	&--expense {
-			// 		display: flex;
-			// 		align-items: center;
-			// 		gap: 6%;
-			// 	}
-			// }
+		&__select-container {
+			width: 100%;
+			overflow: hidden;
+			background: url("../../assets/icons/arrow_drop_down-24px.svg") no-repeat top 0.4rem
+				right 1rem #fff;
+		}
+		&__select {
+			@include desktopBodyMedium;
+			width: 100%;
+			border-radius: 0.8rem;
+			border: 1px solid $secondary-cloud;
+			padding: 0.625rem 1rem;
+			background: transparent;
+			appearance: none;
+			color: $primary-Black;
+			&:focus {
+				outline: none;
+				border: 1px solid $primary-blue;
+			}
+			&::placeholder {
+				color: $primary-silver;
+			}
+		}
+
+		&__select option {
+			&:hover {
+				background-color: $secondary-cloud;
+			}
 		}
 
 		&__error-container {
@@ -124,13 +187,23 @@
 			height: 0.75rem;
 		}
 		&__error-message {
-			@include mobileBodySmall;
+			@include desktopBodySmall;
 			color: $highlight-Red;
 		}
 	}
 
 	.btn_primary {
 		@include buttonPrimary;
-		@include mobileBodyMedium;
+		@include desktopBodyMedium;
+		margin: 2rem 0 0;
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.addform {
+		&-container {
+			padding: 1rem 4rem;
+		}
 	}
 }

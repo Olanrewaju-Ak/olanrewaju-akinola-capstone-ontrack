@@ -15,3 +15,47 @@
 		}
 	}
 }
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	footer {
+		background-color: $primary-blue;
+		display: flex;
+		justify-content: center;
+		padding: 1rem 3rem;
+
+		&-info {
+			&__text {
+				@include desktopLabelsLinksButtons;
+				color: $primary-White;
+			}
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	footer {
+		background-color: $primary-blue;
+		display: flex;
+		justify-content: center;
+		padding: 1rem 4rem;
+		width: 100vw;
+
+		&__container {
+			max-width: 80rem;
+			margin: 0 auto;
+		}
+
+		&-info {
+			&__text {
+				@include desktopLabelsLinksButtons;
+				color: $primary-White;
+			}
+		}
+	}
+}

@@ -1,9 +1,9 @@
-import "./DeleteModal.scss";
+import "./BudgetDeleteModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => {
+const BudgetDeleteModal = ({ closeModal, deleteBudget, selectedBudget }) => {
 	const navigate = useNavigate();
 	return (
 		<>
@@ -19,14 +19,14 @@ const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => 
 					</div>
 					<div className="delete-modal__title">
 						<h1 className="delete-modal__title-text">
-							{`Delete ${selectedTransaction.description} transaction?`}
+							{`Delete ${selectedBudget.description} budget?`}
 						</h1>
 					</div>
 					<div className="delete-modal__body">
 						<p className="delete-modal__body-text">
 							{`Please confirm that you’d like to delete the
-							${selectedTransaction.description} transaction from the list of
-							transactions. You won’t be able to undo this action.`}
+							${selectedBudget.description} budget from the list of
+							budgets. You won’t be able to undo this action.`}
 						</p>
 					</div>
 
@@ -40,8 +40,8 @@ const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => 
 						<button
 							className="delete-modal__button--delete"
 							onClick={() => {
-								deleteTransaction();
-								navigate("/home");
+								deleteBudget();
+								navigate("/budgets");
 							}}
 						>
 							Delete
@@ -53,4 +53,4 @@ const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => 
 	);
 };
 
-export default DeleteModal;
+export default BudgetDeleteModal;

@@ -2,86 +2,166 @@
 @use "../../styles/partials/breakpoints" as breakpoint;
 @use "../../styles/partials/mixins" as *;
 
-// .header {
-// 	background-color: $primary-blue;
-// 	display: flex;
-// 	justify-content: center;
-// 	padding: 1rem;
-// }
-
-// .nav-links__list {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	gap: 6%;
-// 	padding: 0.625rem;
-
-// 	&-item {
-// 		color: $primary-silver;
-
-// 		&:hover {
-// 			@include mobileLabelsLinksButtons;
-// 			color: $primary-White;
-// 			border-bottom: 3px solid $primary-White;
-// 		}
-// 	}
-// }
-
-.header {
-	// height: 12.5rem;
-	background-color: $primary-blue;
-	text-align: center;
-	&__logo {
-		width: 8rem;
-		margin-bottom: 1.5rem;
-	}
-}
-
-.header-container {
-	padding: 1.5rem 1rem;
-}
-
-.header-nav {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	// gap: 1rem;
-	gap: 6%;
-	&__link {
-		text-decoration: none;
-		color: $primary-White;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding-bottom: 0.625rem;
-
-		&:hover {
-			@include mobileLabelsLinksButtons;
-			color: $primary-White;
-			border-bottom: 3px solid $primary-White;
-		}
-
-		&--active {
-			@extend .header-nav__link;
-			color: $primary-White;
-			border-bottom: 3px solid $primary-White;
-			// border-radius: 20px;
-		}
-	}
-	&__text {
-		@include mobileLabelsLinksButtons;
-	}
-}
-
 /*  MOBILE   */
 @include breakpoint.small {
+	.header {
+		background-color: $primary-blue;
+		text-align: center;
+		&__logo {
+			width: 8rem;
+			margin-bottom: 1rem;
+		}
+
+		&-container {
+			padding: 1rem;
+		}
+
+		&-nav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12%;
+			&__link {
+				text-decoration: none;
+				color: $primary-silver;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 0.25rem;
+
+				&:hover {
+					@include mobileLabelsLinksButtons;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+
+				&--active {
+					text-decoration: none;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-bottom: 0.25rem;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+			}
+			&__text {
+				@include mobileLabelsLinksButtons;
+			}
+		}
+	}
 }
 
 /*  TABLET  */
 @include breakpoint.medium {
+	.header {
+		background-color: $primary-blue;
+		text-align: center;
+		&__logo {
+			width: 8rem;
+		}
+
+		&-container {
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			padding: 2rem 3rem 0;
+		}
+
+		&-nav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40%;
+			gap: 12%;
+			&__link {
+				text-decoration: none;
+				color: $primary-silver;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 0.25rem;
+
+				&:hover {
+					@include desktopLabelsLinksButtons;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+
+				&--active {
+					text-decoration: none;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-bottom: 0.25;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+			}
+			&__text {
+				@include desktopLabelsLinksButtons;
+			}
+		}
+	}
 }
 
 /*  DESKTOP  */
 @include breakpoint.large {
+	.header {
+		width: 100vw;
+		background-color: $primary-blue;
+		text-align: center;
+		&__logo {
+			width: 8rem;
+		}
+
+		&-container {
+			max-width: 80rem;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			padding: 2rem 3rem 0;
+		}
+
+		&-nav {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40%;
+			gap: 12%;
+			&__link {
+				text-decoration: none;
+				color: $primary-silver;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-bottom: 0.25rem;
+
+				&:hover {
+					@include desktopLabelsLinksButtons;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+
+				&--active {
+					text-decoration: none;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-bottom: 0.25rem;
+					color: $primary-White;
+					border-bottom: 3px solid $primary-White;
+				}
+			}
+			&__text {
+				@include desktopLabelsLinksButtons;
+			}
+		}
+	}
 }

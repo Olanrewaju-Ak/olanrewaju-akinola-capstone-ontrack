@@ -1,16 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AddForm from "../add-form/AddForm";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import "./AddTransactions.scss";
+import AddForm from "../add-form/AddForm";
 
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
 
-// console.log(URL);
-
-const Addtransaction = () => {
+const Addtransactions = ({ updateTransactions }) => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
 
 	const addNewTransaction = (values) => {
@@ -23,7 +21,7 @@ const Addtransaction = () => {
 				category: category,
 				date: date
 			})
-			.then((response) => console.log(response.data))
+			.then((response) => updateTransactions(response.data))
 			.catch((error) => console.log(error));
 	};
 	const initialValues = {
@@ -37,31 +35,28 @@ const Addtransaction = () => {
 	useEffect(() => {
 		try {
 			addNewTransaction();
-			// getTransactions();
 		} catch (error) {}
 	}, []);
 
 	const modal = (
-		// <Modal isOpen={isAddformVisible} ariaHideApp={false}>
 		<AddForm
 			setAddFormVisible={setAddFormVisible}
 			requestHandler={addNewTransaction}
 			initialValues={initialValues}
 			buttonText="+ Add Transaction"
 		/>
-		// {/* </Modal> */}
 	);
 
 	return (
 		<section className="container">
 			<div className="add-transaction">
-				{/* <p className="add-transaction__title">Addtransaction</p> */}
+				<p className="add-transaction__title">Add a New Transaction</p>
 
 				<button
 					onClick={() => setAddFormVisible(!isAddformVisible)}
-					className="btn_secondary"
+					className="add-transaction__btn--secondary"
 				>
-					{isAddformVisible ? "Cancel" : "ADD TRANSACTION"}
+					{isAddformVisible ? "CANCEL" : "ADD TRANSACTION"}
 				</button>
 			</div>
 			{isAddformVisible && modal}
@@ -69,4 +64,4 @@ const Addtransaction = () => {
 	);
 };
 
-export default Addtransaction;
+export default Addtransactions;

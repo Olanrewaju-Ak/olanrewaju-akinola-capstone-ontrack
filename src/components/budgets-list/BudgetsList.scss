@@ -1,17 +1,10 @@
 @use "../../styles/partials/breakpoints" as breakpoint;
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
 
-.transactions {
-	&-list {
-		padding: 1rem;
-	}
-
-	&__title-bar {
-		display: flex;
-		align-items: center;
-		gap: 10%;
-	}
+.budgets-list {
+	padding: 1rem;
 	&__title {
 		@include mobileBodyLarge;
 		color: $primary-Black;
@@ -23,19 +16,10 @@
 @include breakpoint.small {
 }
 
-/*  TABLET  */
+/*  TABLET   */
 @include breakpoint.medium {
-	.transactions {
-		&-list {
-			padding: 0rem 3rem;
-		}
-
-		&__title-bar {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 10%;
-		}
+	.budgets-list {
+		padding: 0 3rem;
 		&__title {
 			@include desktopBodyLarge;
 			color: $primary-Black;
@@ -46,17 +30,8 @@
 
 /*  DESKTOP  */
 @include breakpoint.large {
-	.transactions {
-		&-list {
-			padding: 0rem 4rem;
-		}
-
-		&__title-bar {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 10%;
-		}
+	.budgets-list {
+		padding: 0 4rem;
 		&__title {
 			@include desktopBodyLarge;
 			color: $primary-Black;

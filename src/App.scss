@@ -4,6 +4,25 @@
 @use "./styles/partials/fonts" as *;
 @use "./styles/partials/resets" as *;
 
-// .App {
-// 	padding: 2rem 1rem;
-// }
+/* MOBILE  */
+@include breakpoint.small {
+	.app {
+		height: 100vh;
+	}
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.app {
+		height: 100vh;
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.app {
+		height: 100vh;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+}

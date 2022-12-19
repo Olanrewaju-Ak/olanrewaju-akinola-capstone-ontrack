@@ -1,30 +1,41 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import React from "react";
 
-import BarChart from "../../components/bar-chart/BarChart";
-import Transactions from "../../components/transactions/Transactions";
+import "./BudgetPage.scss";
+import BudgetsList from "../../components/budgets-list/BudgetsList";
+import AddBudget from "../../components/add-budget/AddBudget";
 
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
 
-const AccountPage = () => {
-	const [transactions, updateTransactions] = useState([]);
-
-	const getTransactions = async () => {
-		const response = await axios.get(`${URL}${PORT}/api/transactions`);
-		updateTransactions(response.data);
-		return;
-	};
-
+const BudgetPage = () => {
+	const [budgets, updateBudgets] = useState([]);
 	useEffect(() => {
 		try {
-			getTransactions();
+			const getBudgets = async () => {
+				const response = await axios.get(`${URL}${PORT}/api/budgets`);
+				updateBudgets(response.data);
+				return;
+			};
+			getBudgets();
+		} catch (error) {}
+	}, []);
+
+	const [transactionsByCategory, updateTransactionsByCategory] = useState([]);
+	useEffect(() => {
+		try {
+			const getTransactionsByCategory = async () => {
+				const response = await axios.get(`${URL}${PORT}/api/transactions`);
+				updateTransactionsByCategory(response.data);
+				return;
+			};
+			getTransactionsByCategory();
 		} catch (error) {}
 	}, []);
 
 	/* *  Get total Food Expenses * */
-	const getFoodCategory = transactions.filter((transactions) => {
+	const getFoodCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "food";
 	});
 
@@ -34,7 +45,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Housing Expenses * */
-	const getHousingCategory = transactions.filter((transactions) => {
+	const getHousingCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "housing";
 	});
 
@@ -44,7 +55,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Transportation Expenses * */
-	const getTransportCategory = transactions.filter((transactions) => {
+	const getTransportCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "transport";
 	});
 
@@ -54,7 +65,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Personal Expenses * */
-	const getPersonalCategory = transactions.filter((transactions) => {
+	const getPersonalCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "personal";
 	});
 
@@ -64,7 +75,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Lifestyle Expenses * */
-	const getLifestyleCategory = transactions.filter((transactions) => {
+	const getLifestyleCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "lifestyle";
 	});
 
@@ -74,7 +85,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Utility Expenses * */
-	const getUtilityCategory = transactions.filter((transactions) => {
+	const getUtilityCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "utility";
 	});
 
@@ -84,7 +95,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Medical Expenses * */
-	const getMedicalCategory = transactions.filter((transactions) => {
+	const getMedicalCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "medical";
 	});
 
@@ -94,7 +105,7 @@ const AccountPage = () => {
 	}, 0);
 
 	/* *  Get total Others Expenses * */
-	const getOthersCategory = transactions.filter((transactions) => {
+	const getOthersCategory = transactionsByCategory.filter((transactions) => {
 		return transactions.category === "others";
 	});
 
@@ -104,9 +115,12 @@ const AccountPage = () => {
 	}, 0);
 
 	return (
-		<div>
+		<section className="budget-page">
 			<div>
-				<BarChart
+				<AddBudget updateBudgets={updateBudgets} />
+				<BudgetsList
+					updateBudgets={updateBudgets}
+					budgets={budgets}
 					totalHousing={totalHousing}
 					totalFood={totalFood}
 					totalTransport={totalTransport}
@@ -117,13 +131,8 @@ const AccountPage = () => {
 					totalOthers={totalOthers}
 				/>
 			</div>
-			<Transactions
-				transactions={transactions}
-				getTransactions={getTransactions}
-				updateTransactions={updateTransactions}
-			/>
-		</div>
+		</section>
 	);
 };
 
-export default AccountPage;
+export default BudgetPage;

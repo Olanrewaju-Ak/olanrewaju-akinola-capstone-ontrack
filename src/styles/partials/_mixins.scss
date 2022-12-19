@@ -97,22 +97,24 @@
 //Buttons
 
 @mixin buttonPrimary {
-	background: #018abe;
-	border-radius: 0.5rem;
+	background: #0361ac;
+	border-radius: 1.25rem;
 	padding: 0.5rem;
 	color: #ffff;
 	border: none;
+	font-family: inter;
 
 	&:hover {
 		background: #02457a;
 	}
 }
 @mixin buttonSecondary {
-	background: #d6e8ee;
-	border-radius: 0.5rem;
+	background: #0361ac;
+	border-radius: 1.25rem;
 	padding: 0.5rem;
-	color: #02457a;
+	color: #ffff;
 	border: 1px solid #02457a;
+	font-family: inter;
 
 	&:hover {
 		background: #02457a;

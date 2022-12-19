@@ -2,13 +2,115 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.transactions {
+.recent-transactions {
 	&-list {
 		padding: 1rem;
 	}
 
-	&-title {
-		@include mobileSubheader;
+	&__title-bar {
+		display: flex;
+		align-items: center;
+		gap: 8%;
+	}
+	&__title {
+		@include mobileBodyMedium;
 		color: $primary-Black;
+		font-weight: 700;
+	}
+	&__title-button {
+		@include mobileLabelsLinksButtons;
+		width: 53%;
+		height: 2.5rem;
+		padding: 0.3rem;
+		font-weight: 500;
+		border: 1px solid $primary-blue;
+		border-radius: 1.25rem;
+		color: $primary-blue;
+		background-color: $primary-White;
+
+		&:hover {
+			color: $primary-White;
+			background-color: $primary-blue;
+		}
+	}
+}
+
+/*  MOBILE   */
+@include breakpoint.small {
+}
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.recent-transactions {
+		&-list {
+			padding: 2rem 3rem;
+		}
+
+		&__title-bar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10%;
+			margin-bottom: 1rem;
+		}
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+		&__title-button {
+			@include desktopLabelsLinksButtons;
+			width: 40%;
+			height: 2.5rem;
+			padding: 0.3rem;
+			font-weight: 700;
+			border: 1px solid $primary-blue;
+			border-radius: 1.25rem;
+			color: $primary-blue;
+			background-color: $primary-White;
+
+			&:hover {
+				color: $primary-White;
+				background-color: $primary-blue;
+			}
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.recent-transactions {
+		&-list {
+			padding: 2rem 4rem;
+		}
+
+		&__title-bar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10%;
+			margin-bottom: 1rem;
+		}
+		&__title {
+			@include desktopBodyLarge;
+			color: $primary-Black;
+			font-weight: 700;
+		}
+		&__title-button {
+			@include desktopLabelsLinksButtons;
+			width: 40%;
+			height: 2.5rem;
+			padding: 0.3rem;
+			font-weight: 700;
+			border: 1px solid $primary-blue;
+			border-radius: 1.25rem;
+			color: $primary-blue;
+			background-color: $primary-White;
+
+			&:hover {
+				color: $primary-White;
+				background-color: $primary-blue;
+			}
+		}
 	}
 }

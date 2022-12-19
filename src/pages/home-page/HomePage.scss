@@ -1,0 +1,67 @@
+@use "../../styles/partials/breakpoints" as breakpoint;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+/*  MOBILE   */
+@include breakpoint.small {
+	.chart-view {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+}
+
+/*  TABLET   */
+@include breakpoint.medium {
+	.home-page {
+		&__top {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12%;
+			padding: 0 3rem;
+
+			&-left {
+				width: 45%;
+			}
+			&-right {
+				width: 45%;
+			}
+		}
+	}
+
+	.chart-view {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.home-page {
+		max-width: 1280px;
+		margin: 0 auto;
+
+		&__top {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5%;
+			padding: 0 3rem;
+
+			&-left {
+				width: 45%;
+			}
+			&-right {
+				width: 45%;
+			}
+		}
+	}
+
+	.chart-view {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+}

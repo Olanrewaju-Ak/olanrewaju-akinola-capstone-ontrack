@@ -5,7 +5,6 @@
 
 .overview {
 	&__section {
-		// max-width: 1000px;
 		display: flex;
 		justify-content: center;
 		padding: 1rem 2rem;
@@ -14,10 +13,12 @@
 	&__balance {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 
 		&--title {
 			@include mobileBodyLarge;
 			color: $primary-silver;
+			font-weight: 700;
 		}
 
 		&--text-good {
@@ -31,9 +32,70 @@
 	}
 }
 
-.good {
-	color: $highlight-Green;
+/*  MOBILE   */
+@include breakpoint.small {
 }
-.bad {
-	color: $highlight-Red;
+
+/*  TABLET  */
+@include breakpoint.medium {
+	.overview {
+		&__section {
+			display: flex;
+			justify-content: center;
+			padding: 1rem 3rem;
+		}
+
+		&__balance {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&--title {
+				@include desktopBodyLarge;
+				font-weight: 700;
+				color: $primary-silver;
+			}
+
+			&--text-good {
+				@include desktopPageHeader;
+				color: $primary-blue;
+			}
+			&--text-bad {
+				@include desktopPageHeader;
+				color: $highlight-Red;
+			}
+		}
+	}
+}
+
+/*  DESKTOP  */
+@include breakpoint.large {
+	.overview {
+		&__section {
+			display: flex;
+			justify-content: center;
+			padding: 1rem 3rem;
+		}
+
+		&__balance {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&--title {
+				@include desktopBodyLarge;
+				font-weight: 700;
+				color: $primary-silver;
+			}
+
+			&--text-good {
+				@include desktopPageHeader;
+				color: $primary-blue;
+			}
+			&--text-bad {
+				@include desktopPageHeader;
+				color: $highlight-Red;
+			}
+		}
+	}
 }

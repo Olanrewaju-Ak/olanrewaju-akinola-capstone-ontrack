@@ -8,19 +8,13 @@ const Header = () => {
 	return (
 		<header className="header">
 			<section className="header-container">
-				<Link to="/">
-					<img
-						src={logo}
-						alt="logo"
-						// width="150px"
-						// height="40px"
-						className="header__logo"
-					/>
+				<Link to="/home">
+					<img src={logo} alt="logo" className="header__logo" />
 				</Link>
 				<nav className="header-nav">
 					<div className="header-nav__link-container">
 						<NavLink
-							to={"/"}
+							to={"/home"}
 							className={({ isActive }) =>
 								isActive ? "header-nav__link--active" : "header-nav__link"
 							}
@@ -36,6 +30,16 @@ const Header = () => {
 							}
 						>
 							<p className="header-nav__text">Transactions</p>
+						</NavLink>
+					</div>
+					<div className="header-nav__link-container">
+						<NavLink
+							to={"/budgets"}
+							className={({ isActive }) =>
+								isActive ? "header-nav__link--active" : "header-nav__link"
+							}
+						>
+							<p className="header-nav__text">Budgets</p>
 						</NavLink>
 					</div>
 				</nav>
