@@ -8,8 +8,6 @@ import AddForm from "../add-form/AddForm";
 const URL = process.env.REACT_APP_BACKEND_URL;
 const PORT = process.env.REACT_APP_PORT;
 
-// console.log(URL);
-
 const Addtransactions = ({ updateTransactions }) => {
 	const [isAddformVisible, setAddFormVisible] = useState(false);
 
@@ -41,14 +39,12 @@ const Addtransactions = ({ updateTransactions }) => {
 	}, []);
 
 	const modal = (
-		// <Modal isOpen={isAddformVisible} ariaHideApp={false}>
 		<AddForm
 			setAddFormVisible={setAddFormVisible}
 			requestHandler={addNewTransaction}
 			initialValues={initialValues}
 			buttonText="+ Add Transaction"
 		/>
-		// {/* </Modal> */}
 	);
 
 	return (

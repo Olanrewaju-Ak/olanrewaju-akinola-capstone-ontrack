@@ -14,8 +14,6 @@
 /*  TABLET   */
 @include breakpoint.medium {
 	.home-page {
-		// padding: 0 3rem;
-
 		&__top {
 			display: flex;
 			align-items: center;
@@ -44,7 +42,6 @@
 	.home-page {
 		max-width: 1280px;
 		margin: 0 auto;
-		// padding: 0 3rem;
 
 		&__top {
 			display: flex;

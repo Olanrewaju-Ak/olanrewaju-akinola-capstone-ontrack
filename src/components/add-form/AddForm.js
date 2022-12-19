@@ -1,7 +1,6 @@
 import "./AddForm.scss";
 import React from "react";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import errorIcon from "../../assets/icons/error-24px.svg";
 
 const AddForm = ({ requestHandler, setAddFormVisible, buttonText, initialValues }) => {

@@ -22,8 +22,6 @@ const BudgetPage = () => {
 		} catch (error) {}
 	}, []);
 
-	// console.log(budgets);
-
 	const [transactionsByCategory, updateTransactionsByCategory] = useState([]);
 	useEffect(() => {
 		try {
@@ -35,8 +33,6 @@ const BudgetPage = () => {
 			getTransactionsByCategory();
 		} catch (error) {}
 	}, []);
-
-	// console.log(transactionsByCategory);
 
 	/* *  Get total Food Expenses * */
 	const getFoodCategory = transactionsByCategory.filter((transactions) => {
@@ -113,7 +109,6 @@ const BudgetPage = () => {
 		return transactions.category === "others";
 	});
 
-	// console.log(getOthersCategory);
 	const totalOthers = getOthersCategory.reduce((total, item) => {
 		const amount = item.amount;
 		return total + amount;

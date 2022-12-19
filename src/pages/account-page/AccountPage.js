@@ -23,8 +23,6 @@ const AccountPage = () => {
 		} catch (error) {}
 	}, []);
 
-	// console.log(transactions);
-
 	/* *  Get total Food Expenses * */
 	const getFoodCategory = transactions.filter((transactions) => {
 		return transactions.category === "food";

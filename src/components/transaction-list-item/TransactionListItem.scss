@@ -10,9 +10,6 @@
 	&:hover {
 		background-color: d6e8ee;
 	}
-	// display: flex;
-	// justify-content: space-between;
-	// position: relative;
 }
 
 .expense {
@@ -54,7 +51,6 @@
 		height: 1.5rem;
 
 		&-delete {
-			// filter: grayscale(100%);
 			filter: invert(12%) sepia(63%) saturate(0%) hue-rotate(246deg) brightness(0%)
 				contrast(10%);
 			&:hover {
@@ -72,10 +68,6 @@
 	}
 
 	&__description {
-		// display: flex;
-		// flex-direction: column;
-		// gap: 7%;
-		// align-items: flex-start;
 		&-text {
 			@include mobileBodyLarge;
 			font-weight: 700;
@@ -100,7 +92,6 @@
 		}
 		&--date {
 			@include mobileBodyMedium;
-			// font-weight: 500;
 			margin: 0.5rem 0;
 			color: $primary-silver;
 		}
@@ -135,7 +126,6 @@
 			height: 1.5rem;
 
 			&-delete {
-				// filter: grayscale(100%);
 				filter: invert(12%) sepia(63%) saturate(0%) hue-rotate(246deg) brightness(0%)
 					contrast(10%);
 				&:hover {
@@ -153,9 +143,6 @@
 		}
 
 		&__description {
-			// display: flex;
-			// gap: 7%;
-			// align-items: center;
 			&-text {
 				@include desktopBodyLarge;
 				font-weight: 700;
@@ -180,7 +167,6 @@
 			}
 			&--date {
 				@include desktopBodyMedium;
-				// font-weight: 500;
 				margin: 0.5rem 0;
 				color: $primary-silver;
 			}
@@ -216,7 +202,6 @@
 			height: 1.5rem;
 
 			&-delete {
-				// filter: grayscale(100%);
 				filter: invert(12%) sepia(63%) saturate(0%) hue-rotate(246deg) brightness(0%)
 					contrast(10%);
 				&:hover {
@@ -234,9 +219,6 @@
 		}
 
 		&__description {
-			// display: flex;
-			// gap: 7%;
-			// align-items: center;
 			&-text {
 				@include desktopBodyLarge;
 				font-weight: 700;
@@ -261,7 +243,6 @@
 			}
 			&--date {
 				@include desktopBodyMedium;
-				// font-weight: 500;
 				margin: 0.5rem 0;
 				color: $primary-silver;
 			}

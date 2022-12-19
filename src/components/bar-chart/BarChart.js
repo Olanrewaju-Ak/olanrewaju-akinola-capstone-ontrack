@@ -12,8 +12,6 @@ import {
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-// const category = [Food , Housing]
-
 const BarChart = ({
 	totalFood,
 	totalHousing,

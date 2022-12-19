@@ -8,7 +8,6 @@ const IncomeExpensesChart = ({ totalIncome, totalExpenses, transactions }) => {
 		const isExpense = item.type === "expense";
 		const modifier = isExpense ? -1 : 1;
 		const modified = amount * modifier;
-		// console.log(modified);
 		return total + modified;
 	}, 0);
 

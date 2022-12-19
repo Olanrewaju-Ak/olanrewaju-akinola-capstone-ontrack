@@ -33,7 +33,6 @@ const AddBudget = ({ updateBudgets }) => {
 		end_date: ""
 	};
 
-	console.log(initialValues);
 	useEffect(() => {
 		try {
 			addNewBudget();

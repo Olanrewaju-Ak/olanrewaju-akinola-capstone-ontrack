@@ -16,10 +16,8 @@ const Transactions = ({ transactions, getTransactions }) => {
 		id: " "
 	});
 
-	// console.log(transactions);
 	const [openModal, setOpenModal] = useState(false);
 
-	console.log(selectedTransaction);
 	const deleteTransaction = async () => {
 		await axios.delete(`${URL}${PORT}/api/transactions/${selectedTransaction.id}`);
 		setOpenModal(false);

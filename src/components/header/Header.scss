@@ -20,7 +20,6 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			// gap: 1rem;
 			gap: 12%;
 			&__link {
 				text-decoration: none;
@@ -44,10 +43,8 @@
 					align-items: center;
 					justify-content: center;
 					padding-bottom: 0.25rem;
-
 					color: $primary-White;
 					border-bottom: 3px solid $primary-White;
-					// border-radius: 20px;
 				}
 			}
 			&__text {
@@ -60,12 +57,10 @@
 /*  TABLET  */
 @include breakpoint.medium {
 	.header {
-		// height: 12.5rem;
 		background-color: $primary-blue;
 		text-align: center;
 		&__logo {
 			width: 8rem;
-			// margin-bottom: 1.5rem;
 		}
 
 		&-container {
@@ -122,7 +117,6 @@
 		text-align: center;
 		&__logo {
 			width: 8rem;
-			// margin-bottom: 1.5rem;
 		}
 
 		&-container {
@@ -163,7 +157,6 @@
 					padding-bottom: 0.25rem;
 					color: $primary-White;
 					border-bottom: 3px solid $primary-White;
-					// border-radius: 20px;
 				}
 			}
 			&__text {

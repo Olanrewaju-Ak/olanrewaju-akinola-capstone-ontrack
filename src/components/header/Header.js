@@ -9,13 +9,7 @@ const Header = () => {
 		<header className="header">
 			<section className="header-container">
 				<Link to="/home">
-					<img
-						src={logo}
-						alt="logo"
-						// width="150px"
-						// height="40px"
-						className="header__logo"
-					/>
+					<img src={logo} alt="logo" className="header__logo" />
 				</Link>
 				<nav className="header-nav">
 					<div className="header-nav__link-container">

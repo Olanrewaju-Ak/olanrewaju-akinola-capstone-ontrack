@@ -36,7 +36,6 @@ const AddBudgetForm = ({ setAddBudgetFormVisible, requestHandler, initialValues,
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-		console.log(values);
 		if (!formValidation(values)) {
 			setIsError(true);
 		} else {

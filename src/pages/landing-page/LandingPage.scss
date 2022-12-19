@@ -10,7 +10,6 @@
 		height: 100vh;
 		padding: 6rem 1rem;
 		gap: 0.625rem;
-		// justify-content: center;
 		align-items: center;
 		background: rgba(2, 69, 122);
 	}
@@ -19,7 +18,6 @@
 		@include mobilePageHeader;
 		color: $primary-White;
 		font-weight: 700;
-		// margin-bottom: 4rem;
 	}
 
 	&__image {
@@ -46,7 +44,6 @@
 			height: 100vh;
 			padding: 9rem 1rem;
 			gap: 0.625rem;
-			// justify-content: center;
 			align-items: center;
 			background: rgba(2, 69, 122);
 		}
@@ -55,7 +52,6 @@
 			@include mobilePageHeader;
 			color: $primary-White;
 			font-weight: 700;
-			// margin-bottom: 4rem;
 		}
 
 		&__btn--secondary {
@@ -78,7 +74,6 @@
 			height: 100vh;
 			padding: 12rem 1rem;
 			gap: 0.625rem;
-			// justify-content: center;
 			align-items: center;
 			background: rgba(2, 69, 122);
 		}
@@ -87,7 +82,6 @@
 			@include desktopPageHeader;
 			color: $primary-White;
 			font-weight: 700;
-			// margin-bottom: 4rem;
 		}
 
 		&__btn--secondary {

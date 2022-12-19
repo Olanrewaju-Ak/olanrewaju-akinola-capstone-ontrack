@@ -28,8 +28,6 @@ const BudgetsList = ({
 	});
 	const [openModal, setOpenModal] = useState(false);
 
-	console.log(selectedBudget);
-
 	const deleteBudget = async () => {
 		await axios
 			.delete(`${URL}${PORT}/api/budgets/${selectedBudget.id}`)

@@ -46,7 +46,6 @@ const HomePage = () => {
 		return;
 	};
 
-	// getIncome();
 	useEffect(() => {
 		try {
 			getExpenses();
