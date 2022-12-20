@@ -2,6 +2,7 @@
 
 OnTack is a personal finance application that helps users manage their daily income and expenses and also helps them create budgets.
 This is my capstone project in my fullstack development bootcamp at BrainStation.
+check for the server side repo @ https://github.com/Olanrewaju-Ak/olanrewaju-akinola-capstone-ontrack-backend
 
 ## Authors
 
