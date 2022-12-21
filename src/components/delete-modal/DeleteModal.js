@@ -41,7 +41,7 @@ const DeleteModal = ({ closeModal, deleteTransaction, selectedTransaction }) => 
 							className="delete-modal__button--delete"
 							onClick={() => {
 								deleteTransaction();
-								navigate("/home");
+								navigate("/account");
 							}}
 						>
 							Delete
