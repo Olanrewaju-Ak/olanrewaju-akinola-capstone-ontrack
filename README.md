@@ -29,7 +29,7 @@ Clone the project
 
 In the project directory, you can run the code
 
-`npm i axios react-router-dom sass chart.js react-chartjs-2`
+`npm install `
 
 to install the nodemodules, scripts and dependencies
 
